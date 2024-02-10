@@ -4,13 +4,12 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from 'src/reportWebVitals';
 // import { App } from 'src/app/App';
 
-// import 'src/core/global/global-includes';
-// import 'src/core/global/global-styles.scss';
+import 'src/core/global/global-includes';
+import 'src/core/global/global-styles.scss';
 
-import buildInfo from './build-info.json';
+import * as buildInfo from 'src/core/constants/app/build';
 
 console.log('[index:buildInfo]', {
-  env: process.env,
   buildInfo,
 });
 

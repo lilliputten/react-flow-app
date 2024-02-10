@@ -131,7 +131,7 @@ const patchBuildTasks = [
    */
   'writeBuildInfo',
   'prettifyHtml',
-  'copyExtraFiles',
+  // 'copyExtraFiles',
 ].filter(Boolean);
 
 gulp.task('patchBuild', gulp.parallel.apply(gulp, patchBuildTasks));
