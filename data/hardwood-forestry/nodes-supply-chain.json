@@ -1,0 +1,83 @@
+[
+  {
+    "id_in_graph": -1,
+    "id_in_database": -1,
+    "product_id_in_database": -1,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.0,
+    "score_through_supply_chain": 5.295292962479179e-06,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 0,
+    "id_in_database": 4762,
+    "product_id_in_database": 4762,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.0,
+    "score_through_supply_chain": 5.2952929624791805e-06,
+    "score_of_node": 3.5599789237444993e-06
+  },
+  {
+    "id_in_graph": 1,
+    "id_in_database": 19235,
+    "product_id_in_database": 19235,
+    "product_scaling_amount": 1.0,
+    "process_amount": 64.80000305175781,
+    "score_through_supply_chain": 1.6617860796422629e-06,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 2,
+    "id_in_database": 24287,
+    "product_id_in_database": 24287,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.25,
+    "score_through_supply_chain": 4.959503713044472e-08,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 3,
+    "id_in_database": 6387,
+    "product_id_in_database": 6387,
+    "product_scaling_amount": 1.0,
+    "process_amount": 64.80000305175781,
+    "score_through_supply_chain": 1.6617860796422605e-06,
+    "score_of_node": 1.591923110660545e-06
+  },
+  {
+    "id_in_graph": 4,
+    "id_in_database": 20683,
+    "product_id_in_database": 20683,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.5163200302767734,
+    "score_through_supply_chain": 4.9347954689483e-08,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 5,
+    "id_in_database": 6303,
+    "product_id_in_database": 6303,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.19241535663604736,
+    "score_through_supply_chain": 3.8171388164926125e-08,
+    "score_of_node": 3.535978577834636e-10
+  },
+  {
+    "id_in_graph": 6,
+    "id_in_database": 6304,
+    "product_id_in_database": 6304,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.0965389633354732,
+    "score_through_supply_chain": 3.682469634864521e-08,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 7,
+    "id_in_database": 6089,
+    "product_id_in_database": 6089,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.0965389633354732,
+    "score_through_supply_chain": 3.3424776616775476e-08,
+    "score_of_node": 2.2898225377812247e-08
+  }
+]
