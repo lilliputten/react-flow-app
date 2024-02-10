@@ -1,0 +1,51 @@
+// Export variables for use in js code.
+// NOTE: Remember to use `parseInt` to extract numeric values.
+
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+:export {
+  transitionTimeMs: $transitionTimeMs;
+  animationTimeMs: $animationTimeMs;
+  disappearTimeMs: $disappearTimeMs;
+
+  defaultFontSizePx: $defaultFontSizePx;
+
+  primaryColor: $primaryColor;
+  secondaryColor: $secondaryColor;
+
+  errorColor: $errorColor;
+  dangerColor: $dangerColor;
+  warnColor: $warnColor;
+  successColor: $successColor;
+  infoColor: $infoColor;
+
+  themeControlsRadiusPx: $themeControlsRadiusPx;
+
+  // Paddings...
+
+  innerPaddingPx: $innerPaddingPx;
+  itemPaddingPx: $itemPaddingPx;
+  containerPaddingPx: $containerPaddingPx;
+  blockPaddingPx: $blockPaddingPx;
+
+  // Basic containers backgrounds...
+
+  graphPaperBgLightColor: $graphPaperBgLightColor;
+  graphPaperBgDarkColor: $graphPaperBgDarkColor;
+
+  graphPlotBgLightColor: $graphPlotBgLightColor;
+  graphPlotBgDarkColor: $graphPlotBgDarkColor;
+
+  graphPlotFontLightColor: $graphPlotFontLightColor;
+  graphPlotFontDarkColor: $graphPlotFontDarkColor;
+
+  // Graph labels...
+
+  graphLabelBgLightColor: $graphLabelBgLightColor;
+  graphLabelBgDarkColor: $graphLabelBgDarkColor;
+
+  graphLabelFontLightColor: $graphLabelFontLightColor;
+  graphLabelFontDarkColor: $graphLabelFontDarkColor;
+
+  graphLabelBorderLightColor: $graphLabelBorderLightColor;
+  graphLabelBorderDarkColor: $graphLabelBorderDarkColor;
+}

@@ -1,0 +1,51 @@
+/* // DEMO: Make fixed clippable layout with inner scrollable zone
+ * @mixin fixedClippableLayout {
+ *   &,
+ *   & :global(.page-main),
+ *   .root {
+ *     overflow: hidden;
+ *     height: 100vh;
+ *   }
+ * }
+ */
+@mixin expandableFullSizeContainer {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  // flex-direction?
+}
+@mixin clippingFullSizeContainer {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  // overflow: hidden;
+}
+@mixin fullSizeBlock {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+@mixin singleFullSizeContainer {
+  @include fullSizeBlock;
+  @include clippingFullSizeContainer;
+}
+@mixin scrollableContainer {
+  flex: 1;
+  display: flex !important; // Override mui settings!
+  flex-direction: column;
+  overflow: auto;
+  justify-content: center;
+  align-items: stretch;
+}

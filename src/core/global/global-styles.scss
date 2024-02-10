@@ -1,0 +1,23 @@
+// Import locally installed font
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
+
+:root {
+  // TODO: Define custom toast colors.
+  // @see `node_modules/react-toastify/scss/_variables.scss`
+  --toastify-color-info: #{$infoColor}; // #3498db;
+  --toastify-color-success: #{$successColor}; // #07bc0c;
+  --toastify-color-warning: #{$warnColor}; // #f1c40f;
+  --toastify-color-error: #{$errorColor}; // #e74c3c;
+  // --toastify-icon-color-info: var(--toastify-color-info);
+  // --toastify-icon-color-success: var(--toastify-color-success);
+  // --toastify-icon-color-warning: var(--toastify-color-warning);
+  // --toastify-icon-color-error: var(--toastify-color-error);
+}
+
+#root,
+body {
+  @include singleFullSizeContainer;
+}
