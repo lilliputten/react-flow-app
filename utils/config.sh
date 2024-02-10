@@ -9,7 +9,7 @@
 DIST_BRANCH="publish" # Production build -> html-app-build
 
 # Use the repo from `.git/config`
-DIST_REPO="git@github.com:lilliputten/sankey-graph-app.git"
+DIST_REPO="git@github.com:lilliputten/react-flow-app.git"
 SRC_TAG_PREFIX="v" # "v" for default tags like "v.X.Y.Z"
 
 PUBLISH_FOLDER="publish" # "$DIST_BRANCH"

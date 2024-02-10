@@ -1,9 +1,9 @@
 {
   "name": "react-flow-app",
   "version": "0.0.0",
-  "timetag": "240208-1848",
-  "timestamp": "2024.02.08 18:48 +0700",
-  "changed": "2024.02.10, 18:00",
+  "timetag": "240210-2127",
+  "timestamp": "2024.02.10 21:27 +0700",
+  "changed": "2024.02.10, 19:26",
   "eslint-unused-rules": {
     "eqeqeq": [
       "warn",
@@ -54,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^7.1.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -71,6 +72,7 @@
     "@types/tinycolor2": "^1.4.6",
     "bind-decorator": "^1.0.11",
     "classnames": "^2.3.2",
+    "craco-plugin-env": "^1.0.5",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.10",
     "dayjs-timezone-iana-plugin": "^0.1.0",
@@ -109,7 +111,8 @@
   "scripts": {
     "patch-node-packages": "echo --Patch node packages-- && patch-package",
     "init-publish-submodule": "echo --Install publish submodule /posix commands used/-- && sh ./utils/publish-init.sh",
-    "postinstall-OPTIONAL-UNUSED": "echo --Run postinstall tasks-- && npm-run-all patch-node-packages init-publish-submodule",
+    "postinstall-OPTIONAL-UNUSED": "echo --Run postinstall tasks-- && npm-run-all init-publish-submodule",
+    "postinstall": "echo --Run postinstall tasks-- && npm-run-all patch-node-packages",
     "clear-cache": "echo --Clear caches-- && rimraf node_modules/.cache && echo Cleared webpack cache && jest --clearCache",
     "stylelint": "echo --Lint styles-- && stylelint src/**/*.{css,scss,less}",
     "prettier": "echo --Run prettier-- && prettier --write --cache . | grep -v '(cached)' || true",

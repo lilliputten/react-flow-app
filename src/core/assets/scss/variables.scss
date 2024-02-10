@@ -1,0 +1,63 @@
+@use 'sass:math';
+@use 'sass:color';
+
+// See exports in `variables.module.scss`...
+
+// DEMO
+$demoColor: color.change(yellow, $alpha: 0.5);
+
+$transitionTimeMs: 250ms;
+$animationTimeMs: 500ms;
+$disappearTimeMs: 1000ms;
+
+$defaultFontSizePx: 14px;
+
+$primaryColor: #26abe0;
+$secondaryColor: #ffa550;
+
+$defaultTextColor: #333;
+$defaultLinkColor: #003d9d;
+$neutralColor: #888;
+
+$errorColor: #c33;
+$dangerColor: #c33;
+$warnColor: #f73;
+$successColor: #593;
+$infoColor: #0074eb;
+
+$bodyBgColor: #f5f5f5;
+
+$borderColor: rgba(27, 31, 59, 0.1);
+
+$themeControlsRadiusPx: 8px;
+
+// Paddings...
+
+$innerPaddingPx: 4px;
+$itemPaddingPx: 8px;
+$containerPaddingPx: 16px;
+$blockPaddingPx: 24px;
+
+// Basic containers backgrounds...
+
+$graphPaperBgLightColor: #fff;
+$graphPaperBgDarkColor: #000;
+
+$graphPlotBgLightColor: #222;
+$graphPlotBgDarkColor: #ddd;
+
+$graphPlotFontLightColor: #333;
+$graphPlotFontDarkColor: #ccc;
+
+// Graph labels...
+
+$graphLabelBgLightColor: #222;
+$graphLabelBgDarkColor: #eee;
+
+// $graphLabelBorderLightColor: transparent; // #222;
+// $graphLabelBorderDarkColor: transparent; // #eee;
+$graphLabelBorderLightColor: color.change($graphLabelBgLightColor, $alpha: 0.85);
+$graphLabelBorderDarkColor: color.change($graphLabelBgDarkColor, $alpha: 0.85);
+
+$graphLabelFontLightColor: #ccc;
+$graphLabelFontDarkColor: #333;

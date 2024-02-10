@@ -1,6 +1,6 @@
 #!/bin/sh
 # @desc Update version number & build timestamps
-# @changed 2024.02.05, 23:32
+# @changed 2024.02.10, 21:26
 
 # Import config variables (expected variables `$DIST_REPO` and `$PUBLISH_FOLDER`)...
 test -f "./utils/config.sh" && . "./utils/config.sh"
@@ -33,11 +33,12 @@ UPDATE_FILE() {
   echo "Processing file $FILE..."
   mv $FILE $FILE.bak || exit 1
   # # TODO: Replace only first occurence of `version`
-  # if [ "$FILE" = "package-lock.json" ]; then # package-lock.json
-  #   cat $FILE.bak \
-  #     | sed -z "s/\(\"version\":\) \".*\"/\1 \"$VERSION\"/" \
-  #   > $FILE || exit 1
-  if [ "$EXT" = "json" ]; then # JSON
+  if [ "$FILE" = "package-lock.json" ]; then # package-lock
+    # NOTE: Update only first occurenece of verion parameter in package-lock...
+    cat $FILE.bak \
+      | sed "0,/\(\"version\":\) \".*\"/{s//\1 \"$VERSION\"/}" \
+    > $FILE || exit 1
+  elif [ "$EXT" = "json" ]; then # JSON
     cat $FILE.bak \
       | sed "s/\(\"version\":\) \".*\"/\1 \"$VERSION\"/" \
       | sed "s/\(\"timestamp\":\) \".*\"/\1 \"$TIMESTAMP\"/" \
@@ -59,9 +60,9 @@ UPDATE_FILE() {
   rm $FILE.bak || exit 1
 }
 
-# UPDATE_FILE "package-lock.json"
 UPDATE_FILE ".env.local"
 UPDATE_FILE "package.json"
+UPDATE_FILE "package-lock.json"
 UPDATE_FILE "README.md"
 UPDATE_FILE "public/package.json"
 UPDATE_FILE "public/README.md"

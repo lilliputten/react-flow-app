@@ -1,6 +1,6 @@
 {
   "short_name": "react-flow-app",
-  "name": "react-flow-app",
+  "name": "React flow data visualizer",
   "icons": [
     {
       "src": "favicon.ico",
