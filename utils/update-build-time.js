@@ -13,6 +13,7 @@ const dayjs = require('dayjs'); // @see https://day.js.org/docs/en/display/forma
 dayjs.extend(dayjsUtc);
 dayjs.extend(dayjsTimezone);
 
+const { allData } = require('./gulp-helpers.js');
 
 const currPath = path.resolve(__dirname);
 const prjPath = path.dirname(path.basename(currPath));
@@ -53,11 +54,14 @@ const buildTzTime = formatDate(now, timeZone, timeTzFormat);
 const timestampFileName = path.resolve(prjPath, 'build-timestamp.txt');
 const timetagFileName = path.resolve(prjPath, 'build-timetag.txt');
 // const versionFileName = path.resolve(prjPath, 'build-version.txt');
+const buildInfoJsonFileName = path.resolve(prjPath, 'src', 'build-info.json');
 
 console.log('Updating build tag/time:', buildTag, '/', buildTzTime);
 
 fs.writeFileSync(timetagFileName, buildTag, 'utf8');
 fs.writeFileSync(timestampFileName, buildTzTime, 'utf8');
+
+fs.writeFileSync(buildInfoJsonFileName, JSON.stringify(allData(), undefined, 2), 'utf8');
 
 function formatDate(date, timeZone, fmt) {
   let dayjsDate = dayjs(date);

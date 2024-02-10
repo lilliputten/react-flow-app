@@ -72,6 +72,16 @@
       "console": "integratedTerminal"
     },
     {
+      "name": "craco start",
+      "program": "${workspaceRoot}/node_modules/@craco/craco/dist/scripts/start.js",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      // "outputCapture" : "std",
+      // "protocol": "inspector",
+      "console": "integratedTerminal"
+    },
+    {
       "name": "Python: Run file",
       "type": "debugpy",
       "request": "launch",

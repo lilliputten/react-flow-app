@@ -7,6 +7,14 @@ import reportWebVitals from 'src/reportWebVitals';
 // import 'src/core/global/global-includes';
 // import 'src/core/global/global-styles.scss';
 
+import buildInfo from './build-info.json';
+
+console.log('XXX', {
+  env: process.env,
+  buildInfo,
+});
+debugger;
+
 const rootNode = document.getElementById('root') as HTMLElement;
 const root = ReactDOM.createRoot(rootNode);
 

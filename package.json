@@ -1,8 +1,8 @@
 {
   "name": "react-flow-app",
   "version": "0.0.0",
-  "timetag": "240210-1918",
-  "timestamp": "2024.02.10 19:18 +0700",
+  "timetag": "240210-2127",
+  "timestamp": "2024.02.10 21:27 +0700",
   "changed": "2024.02.10, 19:26",
   "eslint-unused-rules": {
     "eqeqeq": [
@@ -72,6 +72,7 @@
     "@types/tinycolor2": "^1.4.6",
     "bind-decorator": "^1.0.11",
     "classnames": "^2.3.2",
+    "craco-plugin-env": "^1.0.5",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.10",
     "dayjs-timezone-iana-plugin": "^0.1.0",
