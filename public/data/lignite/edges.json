@@ -1,0 +1,292 @@
+[
+  {
+    "producer_graph_id": 0,
+    "consumer_graph_id": -1,
+    "amount": 1
+  },
+  {
+    "producer_graph_id": 1,
+    "consumer_graph_id": 0,
+    "amount": 9.999999960041972e-12
+  },
+  {
+    "producer_graph_id": 2,
+    "consumer_graph_id": 0,
+    "amount": 0.0016624585259705782
+  },
+  {
+    "producer_graph_id": 3,
+    "consumer_graph_id": 0,
+    "amount": -0.1758139580488205
+  },
+  {
+    "producer_graph_id": 4,
+    "consumer_graph_id": 0,
+    "amount": 0.04309999942779541
+  },
+  {
+    "producer_graph_id": 5,
+    "consumer_graph_id": 0,
+    "amount": 1.2797342538833618
+  },
+  {
+    "producer_graph_id": 6,
+    "consumer_graph_id": 5,
+    "amount": 1.2797342538833618
+  },
+  {
+    "producer_graph_id": 7,
+    "consumer_graph_id": 5,
+    "amount": 0.01736472742786499
+  },
+  {
+    "producer_graph_id": 8,
+    "consumer_graph_id": 5,
+    "amount": 0.015896816069523312
+  },
+  {
+    "producer_graph_id": 9,
+    "consumer_graph_id": 5,
+    "amount": 0.02193150476178518
+  },
+  {
+    "producer_graph_id": 10,
+    "consumer_graph_id": 4,
+    "amount": 0.04309999942779541
+  },
+  {
+    "producer_graph_id": 11,
+    "consumer_graph_id": 10,
+    "amount": -0.13370322681780067
+  },
+  {
+    "producer_graph_id": 12,
+    "consumer_graph_id": 10,
+    "amount": -0.04106556281168139
+  },
+  {
+    "producer_graph_id": 13,
+    "consumer_graph_id": 10,
+    "amount": 0.07934692770996321
+  },
+  {
+    "producer_graph_id": 14,
+    "consumer_graph_id": 6,
+    "amount": 1.2797342487697961e-11
+  },
+  {
+    "producer_graph_id": 15,
+    "consumer_graph_id": 6,
+    "amount": 0.0103194229633089
+  },
+  {
+    "producer_graph_id": 16,
+    "consumer_graph_id": 6,
+    "amount": 0.019196013379186083
+  },
+  {
+    "producer_graph_id": 17,
+    "consumer_graph_id": 11,
+    "amount": -0.023684743130547685
+  },
+  {
+    "producer_graph_id": 18,
+    "consumer_graph_id": 11,
+    "amount": -0.11001847970258631
+  },
+  {
+    "producer_graph_id": 19,
+    "consumer_graph_id": 12,
+    "amount": -0.028745893478637315
+  },
+  {
+    "producer_graph_id": 20,
+    "consumer_graph_id": 15,
+    "amount": 0.008536030416707424
+  },
+  {
+    "producer_graph_id": 21,
+    "consumer_graph_id": 15,
+    "amount": 0.0017833923928300903
+  },
+  {
+    "producer_graph_id": 22,
+    "consumer_graph_id": 20,
+    "amount": 0.0023202847228695474
+  },
+  {
+    "producer_graph_id": 23,
+    "consumer_graph_id": 20,
+    "amount": 0.00126520205600872
+  },
+  {
+    "producer_graph_id": 24,
+    "consumer_graph_id": 20,
+    "amount": 0.0012598503793099078
+  },
+  {
+    "producer_graph_id": 25,
+    "consumer_graph_id": 20,
+    "amount": 0.0012016151211201155
+  },
+  {
+    "producer_graph_id": 26,
+    "consumer_graph_id": 20,
+    "amount": 0.0019539304374100617
+  },
+  {
+    "producer_graph_id": 27,
+    "consumer_graph_id": 16,
+    "amount": 0.019196013379186083
+  },
+  {
+    "producer_graph_id": 28,
+    "consumer_graph_id": 13,
+    "amount": 0.07819444698621147
+  },
+  {
+    "producer_graph_id": 29,
+    "consumer_graph_id": 1,
+    "amount": 9.999999960041972e-12
+  },
+  {
+    "producer_graph_id": 30,
+    "consumer_graph_id": 29,
+    "amount": 0.0005059999979781238
+  },
+  {
+    "producer_graph_id": 31,
+    "consumer_graph_id": 29,
+    "amount": 0.0030885692676586862
+  },
+  {
+    "producer_graph_id": 32,
+    "consumer_graph_id": 29,
+    "amount": 0.0030899999876529693
+  },
+  {
+    "producer_graph_id": 33,
+    "consumer_graph_id": 28,
+    "amount": 0.007021861354276198
+  },
+  {
+    "producer_graph_id": 34,
+    "consumer_graph_id": 28,
+    "amount": 0.07788218590790252
+  },
+  {
+    "producer_graph_id": 35,
+    "consumer_graph_id": 26,
+    "amount": 0.0007062357438365632
+  },
+  {
+    "producer_graph_id": 36,
+    "consumer_graph_id": 8,
+    "amount": 0.00025434906919330496
+  },
+  {
+    "producer_graph_id": 37,
+    "consumer_graph_id": 8,
+    "amount": 0.011080081224948534
+  },
+  {
+    "producer_graph_id": 38,
+    "consumer_graph_id": 9,
+    "amount": 0.016147195507919734
+  },
+  {
+    "producer_graph_id": 39,
+    "consumer_graph_id": 23,
+    "amount": 0.000640643250774745
+  },
+  {
+    "producer_graph_id": 40,
+    "consumer_graph_id": 33,
+    "amount": 0.004937721721112164
+  },
+  {
+    "producer_graph_id": 41,
+    "consumer_graph_id": 14,
+    "amount": 8.566639162231135e-12
+  },
+  {
+    "producer_graph_id": 42,
+    "consumer_graph_id": 7,
+    "amount": 0.01736472742786499
+  },
+  {
+    "producer_graph_id": 43,
+    "consumer_graph_id": 18,
+    "amount": 0.11001847970258631
+  },
+  {
+    "producer_graph_id": 44,
+    "consumer_graph_id": 30,
+    "amount": 0.0003419301105187855
+  },
+  {
+    "producer_graph_id": 45,
+    "consumer_graph_id": 39,
+    "amount": 0.00043920273963499195
+  },
+  {
+    "producer_graph_id": 46,
+    "consumer_graph_id": 45,
+    "amount": 0.000423694032402217
+  },
+  {
+    "producer_graph_id": 47,
+    "consumer_graph_id": 46,
+    "amount": 1.025339552857456e-05
+  },
+  {
+    "producer_graph_id": 48,
+    "consumer_graph_id": 32,
+    "amount": 0.0030899999876529693
+  },
+  {
+    "producer_graph_id": 49,
+    "consumer_graph_id": 43,
+    "amount": 0.11001847970258631
+  },
+  {
+    "producer_graph_id": 50,
+    "consumer_graph_id": 49,
+    "amount": 0.002970499029021776
+  },
+  {
+    "producer_graph_id": 51,
+    "consumer_graph_id": 50,
+    "amount": 0.002970499029021776
+  },
+  {
+    "producer_graph_id": 52,
+    "consumer_graph_id": 34,
+    "amount": 0.07788218590790252
+  },
+  {
+    "producer_graph_id": 53,
+    "consumer_graph_id": 52,
+    "amount": 0.07788218590790252
+  },
+  {
+    "producer_graph_id": 54,
+    "consumer_graph_id": 35,
+    "amount": 0.0003374522855758853
+  },
+  {
+    "producer_graph_id": 55,
+    "consumer_graph_id": 54,
+    "amount": 0.00032553649309613773
+  },
+  {
+    "producer_graph_id": 56,
+    "consumer_graph_id": 55,
+    "amount": 7.877983090238862e-06
+  },
+  {
+    "producer_graph_id": 57,
+    "consumer_graph_id": 53,
+    "amount": 0.07788214412864229
+  }
+]

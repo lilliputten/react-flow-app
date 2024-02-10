@@ -1,0 +1,12 @@
+diff --git a/node_modules/fork-ts-checker-webpack-plugin/lib/hooks/tapDoneToAsyncGetIssues.js b/node_modules/fork-ts-checker-webpack-plugin/lib/hooks/tapDoneToAsyncGetIssues.js
+index 7eb2b98..8f80311 100644
+--- a/node_modules/fork-ts-checker-webpack-plugin/lib/hooks/tapDoneToAsyncGetIssues.js
++++ b/node_modules/fork-ts-checker-webpack-plugin/lib/hooks/tapDoneToAsyncGetIssues.js
+@@ -19,6 +19,7 @@ const IssueWebpackError_1 = require("../issue/IssueWebpackError");
+ const isPending_1 = __importDefault(require("../utils/async/isPending"));
+ const wait_1 = __importDefault(require("../utils/async/wait"));
+ function tapDoneToAsyncGetIssues(compiler, configuration, state) {
++    return; // Disable issues checking on build
+     const hooks = pluginHooks_1.getForkTsCheckerWebpackPluginHooks(compiler);
+     compiler.hooks.done.tap('ForkTsCheckerWebpackPlugin', (stats) => __awaiter(this, void 0, void 0, function* () {
+         if (stats.compilation.compiler !== compiler) {

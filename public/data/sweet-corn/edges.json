@@ -1,0 +1,152 @@
+[
+  {
+    "producer_graph_id": 0,
+    "consumer_graph_id": -1,
+    "amount": 1
+  },
+  {
+    "producer_graph_id": 1,
+    "consumer_graph_id": 0,
+    "amount": 7.69230755395256e-05
+  },
+  {
+    "producer_graph_id": 2,
+    "consumer_graph_id": 0,
+    "amount": 0.016490761190652847
+  },
+  {
+    "producer_graph_id": 3,
+    "consumer_graph_id": 0,
+    "amount": 0.048234693706035614
+  },
+  {
+    "producer_graph_id": 4,
+    "consumer_graph_id": 0,
+    "amount": 7.69230755395256e-05
+  },
+  {
+    "producer_graph_id": 5,
+    "consumer_graph_id": 0,
+    "amount": 0.02153846062719822
+  },
+  {
+    "producer_graph_id": 6,
+    "consumer_graph_id": 0,
+    "amount": 0.003076923079788685
+  },
+  {
+    "producer_graph_id": 7,
+    "consumer_graph_id": 2,
+    "amount": 0.016490761190652847
+  },
+  {
+    "producer_graph_id": 8,
+    "consumer_graph_id": 7,
+    "amount": 0.00767489626404716
+  },
+  {
+    "producer_graph_id": 9,
+    "consumer_graph_id": 7,
+    "amount": 0.023386897009449736
+  },
+  {
+    "producer_graph_id": 10,
+    "consumer_graph_id": 4,
+    "amount": 7.691812835409822e-05
+  },
+  {
+    "producer_graph_id": 11,
+    "consumer_graph_id": 10,
+    "amount": 0.0010460865749576732
+  },
+  {
+    "producer_graph_id": 12,
+    "consumer_graph_id": 6,
+    "amount": 0.006688963089350075
+  },
+  {
+    "producer_graph_id": 13,
+    "consumer_graph_id": 12,
+    "amount": 0.006688963089350075
+  },
+  {
+    "producer_graph_id": 14,
+    "consumer_graph_id": 13,
+    "amount": 0.005698996539368079
+  },
+  {
+    "producer_graph_id": 15,
+    "consumer_graph_id": 8,
+    "amount": 0.0026862136466705593
+  },
+  {
+    "producer_graph_id": 16,
+    "consumer_graph_id": 14,
+    "amount": 0.003992467125884955
+  },
+  {
+    "producer_graph_id": 17,
+    "consumer_graph_id": 15,
+    "amount": 0.03572664201307303
+  },
+  {
+    "producer_graph_id": 18,
+    "consumer_graph_id": 17,
+    "amount": 0.034820880976972016
+  },
+  {
+    "producer_graph_id": 19,
+    "consumer_graph_id": 18,
+    "amount": 0.024485789689303677
+  },
+  {
+    "producer_graph_id": 20,
+    "consumer_graph_id": 11,
+    "amount": 0.0010432621713335896
+  },
+  {
+    "producer_graph_id": 21,
+    "consumer_graph_id": 20,
+    "amount": 0.00021908504913989397
+  },
+  {
+    "producer_graph_id": 22,
+    "consumer_graph_id": 16,
+    "amount": 0.0053301703124016934
+  },
+  {
+    "producer_graph_id": 23,
+    "consumer_graph_id": 9,
+    "amount": 0.023386897009449736
+  },
+  {
+    "producer_graph_id": 24,
+    "consumer_graph_id": 23,
+    "amount": 0.06431396677598678
+  },
+  {
+    "producer_graph_id": 25,
+    "consumer_graph_id": 24,
+    "amount": 0.06431396677598678
+  },
+  {
+    "producer_graph_id": 26,
+    "consumer_graph_id": 25,
+    "amount": 0.01647610651476845
+  },
+  {
+    "producer_graph_id": 27,
+    "consumer_graph_id": 22,
+    "amount": 0.0028118295878118986
+  },
+  {
+    "producer_graph_id": 28,
+    "consumer_graph_id": 1,
+    "amount": 7.634017880388776e-05
+  },
+  {
+    "producer_graph_id": 29,
+    "consumer_graph_id": 21,
+    "amount": 0.00015247718290991113
+  }
+]

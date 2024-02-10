@@ -1,0 +1,12 @@
+[
+  {
+    "producer_graph_id": 20,
+    "consumer_graph_id": 60,
+    "amount": 20
+  },
+  {
+    "producer_graph_id": 40,
+    "consumer_graph_id": 60,
+    "amount": 40
+  }
+]

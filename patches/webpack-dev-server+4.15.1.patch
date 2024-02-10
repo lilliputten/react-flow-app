@@ -1,0 +1,22 @@
+diff --git a/node_modules/webpack-dev-server/lib/Server.js b/node_modules/webpack-dev-server/lib/Server.js
+index 79e6fc7..5a976ef 100644
+--- a/node_modules/webpack-dev-server/lib/Server.js
++++ b/node_modules/webpack-dev-server/lib/Server.js
+@@ -1437,7 +1437,7 @@ class Server {
+       (options.open) = [...getOpenItemsFromObject(options.open)];
+     }
+ 
+-    if (options.onAfterSetupMiddleware) {
++    if (false && options.onAfterSetupMiddleware) {
+       // TODO: remove in the next major release
+       util.deprecate(
+         () => {},
+@@ -1446,7 +1446,7 @@ class Server {
+       )();
+     }
+ 
+-    if (options.onBeforeSetupMiddleware) {
++    if (false && options.onBeforeSetupMiddleware) {
+       // TODO: remove in the next major release
+       util.deprecate(
+         () => {},

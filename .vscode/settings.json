@@ -1,0 +1,10 @@
+{
+    "search.exclude": {
+      "patches": true,
+      "build": true,
+      "public": true,
+      "publish": true
+    },
+    "git.ignoreLimitWarning": true,
+    "vscode-as-git-mergetool.settingsAssistantOnStartup": false
+}

@@ -1,0 +1,282 @@
+[
+  {
+    "id_in_database": 1992,
+    "process_id_in_graph": 0,
+    "process_id_in_database": 18039,
+    "amount": 0.0029800001066178083,
+    "score": 2.950200074388016e-09
+  },
+  {
+    "id_in_database": 4702,
+    "process_id_in_graph": 0,
+    "process_id_in_database": 18039,
+    "amount": 0.0006539999740198255,
+    "score": 1.9734906702993553e-09
+  },
+  {
+    "id_in_database": 4691,
+    "process_id_in_graph": 0,
+    "process_id_in_database": 18039,
+    "amount": 0.0034600000362843275,
+    "score": 7.265999939845262e-10
+  },
+  {
+    "id_in_database": 1992,
+    "process_id_in_graph": 19,
+    "process_id_in_database": 16875,
+    "amount": 0.000704274371807685,
+    "score": 6.972316207245966e-10
+  },
+  {
+    "id_in_database": 1992,
+    "process_id_in_graph": 17,
+    "process_id_in_database": 12891,
+    "amount": 0.0005802761915224208,
+    "score": 5.74473423538907e-10
+  },
+  {
+    "id_in_database": 4705,
+    "process_id_in_graph": 27,
+    "process_id_in_database": 6387,
+    "amount": 1.8101840180231925e-06,
+    "score": 4.317234566109999e-10
+  },
+  {
+    "id_in_database": 4700,
+    "process_id_in_graph": 47,
+    "process_id_in_database": 9997,
+    "amount": 2.9203720541769935e-07,
+    "score": 6.964999719731833e-11
+  },
+  {
+    "id_in_database": 4705,
+    "process_id_in_graph": 48,
+    "process_id_in_database": 6387,
+    "amount": 2.913869918118609e-07,
+    "score": 6.949492320337454e-11
+  },
+  {
+    "id_in_database": 4705,
+    "process_id_in_graph": 36,
+    "process_id_in_database": 21933,
+    "amount": 2.8741444555431756e-07,
+    "score": 6.854748284108109e-11
+  },
+  {
+    "id_in_database": 4705,
+    "process_id_in_graph": 51,
+    "process_id_in_database": 6387,
+    "amount": 2.801180516845745e-07,
+    "score": 6.68073147969058e-11
+  },
+  {
+    "id_in_database": 4705,
+    "process_id_in_graph": 42,
+    "process_id_in_database": 24073,
+    "amount": 2.3838298403464e-07,
+    "score": 5.68536263937786e-11
+  },
+  {
+    "id_in_database": 4700,
+    "process_id_in_graph": 56,
+    "process_id_in_database": 9997,
+    "amount": 2.2438070974533932e-07,
+    "score": 5.351412599138649e-11
+  },
+  {
+    "id_in_database": 4706,
+    "process_id_in_graph": 0,
+    "process_id_in_database": 18039,
+    "amount": 7.699999696342275e-05,
+    "score": 5.344123195097007e-11
+  },
+  {
+    "id_in_database": 4705,
+    "process_id_in_graph": 38,
+    "process_id_in_database": 24545,
+    "amount": 1.9538107010899272e-07,
+    "score": 4.659779895522739e-11
+  },
+  {
+    "id_in_database": 4694,
+    "process_id_in_graph": 27,
+    "process_id_in_database": 6387,
+    "amount": 1.9771894607940723e-05,
+    "score": 3.1635031742395215e-11
+  },
+  {
+    "id_in_database": 4700,
+    "process_id_in_graph": 40,
+    "process_id_in_database": 22994,
+    "amount": 1.2344303990937053e-07,
+    "score": 2.94407946118328e-11
+  },
+  {
+    "id_in_database": 716,
+    "process_id_in_graph": 40,
+    "process_id_in_database": 22994,
+    "amount": 3.0860760067159266e-06,
+    "score": 2.468860799139467e-11
+  },
+  {
+    "id_in_database": 4705,
+    "process_id_in_graph": 37,
+    "process_id_in_database": 23639,
+    "amount": 9.451309098522775e-08,
+    "score": 2.2541088601418465e-11
+  },
+  {
+    "id_in_database": 4694,
+    "process_id_in_graph": 42,
+    "process_id_in_database": 24073,
+    "amount": 1.0193094786878268e-05,
+    "score": 1.6308951849593228e-11
+  },
+  {
+    "id_in_database": 4709,
+    "process_id_in_graph": 37,
+    "process_id_in_database": 23639,
+    "amount": 2.9251413453056643e-07,
+    "score": 1.6045687704424425e-11
+  },
+  {
+    "id_in_database": 4694,
+    "process_id_in_graph": 38,
+    "process_id_in_database": 24545,
+    "amount": 8.348099731594499e-06,
+    "score": 1.3356959726641929e-11
+  },
+  {
+    "id_in_database": 4709,
+    "process_id_in_graph": 38,
+    "process_id_in_database": 24545,
+    "amount": 2.1798713972441358e-07,
+    "score": 1.1957554027985517e-11
+  },
+  {
+    "id_in_database": 4709,
+    "process_id_in_graph": 42,
+    "process_id_in_database": 24073,
+    "amount": 1.2914147826369765e-07,
+    "score": 7.0839784656302665e-12
+  },
+  {
+    "id_in_database": 4701,
+    "process_id_in_graph": 40,
+    "process_id_in_database": 22994,
+    "amount": 1.2344303990937053e-07,
+    "score": 6.7713940416906006e-12
+  },
+  {
+    "id_in_database": 4694,
+    "process_id_in_graph": 37,
+    "process_id_in_database": 23639,
+    "amount": 4.055309650070883e-06,
+    "score": 6.488495515938603e-12
+  },
+  {
+    "id_in_database": 1995,
+    "process_id_in_graph": 36,
+    "process_id_in_database": 21933,
+    "amount": 7.121773683476075e-07,
+    "score": 5.69741893239626e-12
+  },
+  {
+    "id_in_database": 4694,
+    "process_id_in_graph": 48,
+    "process_id_in_database": 6387,
+    "amount": 3.182700120466529e-06,
+    "score": 5.092320252255796e-12
+  },
+  {
+    "id_in_database": 4694,
+    "process_id_in_graph": 51,
+    "process_id_in_database": 6387,
+    "amount": 3.0596141279257164e-06,
+    "score": 4.895382661889064e-12
+  },
+  {
+    "id_in_database": 4709,
+    "process_id_in_graph": 27,
+    "process_id_in_database": 6387,
+    "amount": 8.04312922112223e-08,
+    "score": 4.412010375347241e-12
+  },
+  {
+    "id_in_database": 1995,
+    "process_id_in_graph": 27,
+    "process_id_in_database": 6387,
+    "amount": 4.530259084944757e-07,
+    "score": 3.624207258805562e-12
+  },
+  {
+    "id_in_database": 716,
+    "process_id_in_graph": 47,
+    "process_id_in_database": 9997,
+    "amount": 3.6143219910490324e-07,
+    "score": 2.8914575855389972e-12
+  },
+  {
+    "id_in_database": 716,
+    "process_id_in_graph": 56,
+    "process_id_in_database": 9997,
+    "amount": 2.776989090961281e-07,
+    "score": 2.221591267160046e-12
+  },
+  {
+    "id_in_database": 1992,
+    "process_id_in_graph": 35,
+    "process_id_in_database": 10873,
+    "amount": 2.230993997506015e-06,
+    "score": 2.208684034200138e-12
+  },
+  {
+    "id_in_database": 4706,
+    "process_id_in_graph": 57,
+    "process_id_in_database": 15468,
+    "amount": 3.115285686446954e-06,
+    "score": 2.1621391107591053e-12
+  },
+  {
+    "id_in_database": 1992,
+    "process_id_in_graph": 39,
+    "process_id_in_database": 20850,
+    "amount": 2.102394156757823e-06,
+    "score": 2.081370193204272e-12
+  },
+  {
+    "id_in_database": 4690,
+    "process_id_in_graph": 40,
+    "process_id_in_database": 22994,
+    "amount": 1.2344304889103402e-06,
+    "score": 1.9750888053376244e-12
+  },
+  {
+    "id_in_database": 4702,
+    "process_id_in_graph": 57,
+    "process_id_in_database": 15468,
+    "amount": 6.230571514560703e-07,
+    "score": 1.8801185386967197e-12
+  },
+  {
+    "id_in_database": 4701,
+    "process_id_in_graph": 47,
+    "process_id_in_database": 9997,
+    "amount": 3.41191985450888e-08,
+    "score": 1.8715882070394087e-12
+  },
+  {
+    "id_in_database": 4709,
+    "process_id_in_graph": 36,
+    "process_id_in_database": 21933,
+    "amount": 3.3574077395743555e-08,
+    "score": 1.8416859127878577e-12
+  },
+  {
+    "id_in_database": 4701,
+    "process_id_in_graph": 56,
+    "process_id_in_database": 9997,
+    "amount": 2.621477621161071e-08,
+    "score": 1.4379958527745108e-12
+  }
+]

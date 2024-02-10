@@ -1,0 +1,26 @@
+# @module .flake8
+# @since 2022.02.15, 03:59
+# @changed 2022.02.22, 01:08
+#
+# @see:
+# - https://flake8.pycqa.org/en/2.6.0/warnings.html
+# - https://flake8.pycqa.org/en/latest/user/options.html
+# - https://flake8.pycqa.org/en/latest/user/configuration.html
+# - https://flake8.pycqa.org/en/latest/user/error-codes.html
+# - https://flake8.pycqa.org/en/latest/user/violations.html
+# - [python.linting.flake8CategorySeverity.F should default to "Warning", not "Error"](https://github.com/microsoft/vscode-python/issues/815)
+
+[flake8]
+max-line-length = 999
+# select
+exclude =
+    .venv,
+    .git,
+    .vscode,
+    node_modules,
+    __pycache__,
+    static,
+    temp,
+    utils,
+    Work,
+    UNUSED,

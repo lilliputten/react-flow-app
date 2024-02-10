@@ -1,0 +1,41 @@
+# Enable dot files in root folder
+
+!.*
+
+# Disable project generated folders
+
+/.dependencygraph
+/.git
+/.history
+/.husky
+/.next
+/.storybook
+/.vscode
+/__mocks__
+/build
+/coverage
+/.idea
+/i18n
+/node_modules
+/public
+/public-src
+/publish
+/types
+/utils
+
+# Log files
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temp & hidden files
+/temp
+**/*_{BACKUP,BASE,LOCAL,REMOTE}_*
+**/*UNUSED
+**/*.bak
+**/*.tmp
+**/.*sw?
+**/*_
+package-lock.*
+.DS_Store

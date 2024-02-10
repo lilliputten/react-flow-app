@@ -1,0 +1,533 @@
+[
+  {
+    "id_in_graph": -1,
+    "id_in_database": -1,
+    "product_id_in_database": -1,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.0,
+    "score_through_supply_chain": 9.981936043202016e-09,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 0,
+    "id_in_database": 18039,
+    "product_id_in_database": 18039,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.0,
+    "score_through_supply_chain": 9.981936043202015e-09,
+    "score_of_node": 5.703731970622867e-09
+  },
+  {
+    "id_in_graph": 1,
+    "id_in_database": 6247,
+    "product_id_in_database": 6247,
+    "product_scaling_amount": 1.0,
+    "process_amount": 9.999999960041972e-12,
+    "score_through_supply_chain": 2.826552776147551e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 2,
+    "id_in_database": 6507,
+    "product_id_in_database": 6507,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.0016624585259705782,
+    "score_through_supply_chain": 5.5347111353954967e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 3,
+    "id_in_database": 13013,
+    "product_id_in_database": 13013,
+    "product_scaling_amount": -1.0,
+    "process_amount": 0.1758139580488205,
+    "score_through_supply_chain": 7.353177911884105e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 4,
+    "id_in_database": 18590,
+    "product_id_in_database": 18590,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.04309999942779541,
+    "score_through_supply_chain": 1.890462199162195e-09,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 5,
+    "id_in_database": 21960,
+    "product_id_in_database": 21960,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.2797342538833618,
+    "score_through_supply_chain": 1.9651751899160307e-09,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 6,
+    "id_in_database": 4848,
+    "product_id_in_database": 4848,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.2797342538833618,
+    "score_through_supply_chain": 1.5153878993690569e-09,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 7,
+    "id_in_database": 23004,
+    "product_id_in_database": 23004,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.01736472742786499,
+    "score_through_supply_chain": 1.1260375042519598e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 8,
+    "id_in_database": 23565,
+    "product_id_in_database": 23565,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.015896816069523312,
+    "score_through_supply_chain": 1.6104170819144705e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 9,
+    "id_in_database": 24638,
+    "product_id_in_database": 24638,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.02193150476178518,
+    "score_through_supply_chain": 1.5318940438420785e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 10,
+    "id_in_database": 23924,
+    "product_id_in_database": 23924,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.04309999942779541,
+    "score_through_supply_chain": 1.8904621991621946e-09,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 11,
+    "id_in_database": 12715,
+    "product_id_in_database": 12715,
+    "product_scaling_amount": -1.0,
+    "process_amount": 0.13370322681780067,
+    "score_through_supply_chain": 7.835262842951186e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 12,
+    "id_in_database": 21732,
+    "product_id_in_database": 21732,
+    "product_scaling_amount": -1.0,
+    "process_amount": 0.04106556281168139,
+    "score_through_supply_chain": 7.77763870050573e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 13,
+    "id_in_database": 25190,
+    "product_id_in_database": 25190,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.07934692770996321,
+    "score_through_supply_chain": 2.9444434647640245e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 14,
+    "id_in_database": 12865,
+    "product_id_in_database": 12865,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.2797342487697961e-11,
+    "score_through_supply_chain": 1.175560539863785e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 15,
+    "id_in_database": 17851,
+    "product_id_in_database": 17851,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.0103194229633089,
+    "score_through_supply_chain": 7.217921591933596e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 16,
+    "id_in_database": 19235,
+    "product_id_in_database": 19235,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.019196013379186083,
+    "score_through_supply_chain": 4.922788011704075e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 17,
+    "id_in_database": 12891,
+    "product_id_in_database": 12891,
+    "product_scaling_amount": -1.0,
+    "process_amount": 0.023684743130547685,
+    "score_through_supply_chain": 6.244171204149664e-10,
+    "score_of_node": 5.74473423538907e-10
+  },
+  {
+    "id_in_graph": 18,
+    "id_in_database": 24490,
+    "product_id_in_database": 24490,
+    "product_scaling_amount": -1.0,
+    "process_amount": 0.11001847970258631,
+    "score_through_supply_chain": 1.1029816025483475e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 19,
+    "id_in_database": 16875,
+    "product_id_in_database": 16875,
+    "product_scaling_amount": -1.0,
+    "process_amount": 0.028745893478637315,
+    "score_through_supply_chain": 7.520140418162318e-10,
+    "score_of_node": 6.972316207245966e-10
+  },
+  {
+    "id_in_graph": 20,
+    "id_in_database": 17713,
+    "product_id_in_database": 17713,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.008536030416707424,
+    "score_through_supply_chain": 6.431740193699389e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 21,
+    "id_in_database": 25575,
+    "product_id_in_database": 25575,
+    "product_scaling_amount": 0.978082001209259,
+    "process_amount": 0.001823356723286166,
+    "score_through_supply_chain": 7.861813982342112e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 22,
+    "id_in_database": 15228,
+    "product_id_in_database": 15228,
+    "product_scaling_amount": 0.978082001209259,
+    "process_amount": 0.002372280360952196,
+    "score_through_supply_chain": 1.391090929880896e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 23,
+    "id_in_database": 16828,
+    "product_id_in_database": 16828,
+    "product_scaling_amount": 0.978082001209259,
+    "process_amount": 0.0012935541748488142,
+    "score_through_supply_chain": 1.3914144189836813e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 24,
+    "id_in_database": 19739,
+    "product_id_in_database": 19739,
+    "product_scaling_amount": 0.978082001209259,
+    "process_amount": 0.0012880825715556388,
+    "score_through_supply_chain": 9.632540896799655e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 25,
+    "id_in_database": 23897,
+    "product_id_in_database": 23897,
+    "product_scaling_amount": 0.978082001209259,
+    "process_amount": 0.0012285423099847351,
+    "score_through_supply_chain": 8.18524268844909e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 26,
+    "id_in_database": 25299,
+    "product_id_in_database": 25299,
+    "product_scaling_amount": 0.978082001209259,
+    "process_amount": 0.0019977163826696586,
+    "score_through_supply_chain": 1.7438055780131013e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 27,
+    "id_in_database": 6387,
+    "product_id_in_database": 6387,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.019196013379186083,
+    "score_through_supply_chain": 4.922788011704068e-10,
+    "score_of_node": 4.715829612919501e-10
+  },
+  {
+    "id_in_graph": 28,
+    "id_in_database": 6605,
+    "product_id_in_database": 6605,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.07819444698621147,
+    "score_through_supply_chain": 2.6053243489865034e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 29,
+    "id_in_database": 5117,
+    "product_id_in_database": 5117,
+    "product_scaling_amount": 1.0,
+    "process_amount": 9.999999960041972e-12,
+    "score_through_supply_chain": 2.826552776147551e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 30,
+    "id_in_database": 15381,
+    "product_id_in_database": 15381,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.0005059999979781238,
+    "score_through_supply_chain": 8.80247675320254e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 31,
+    "id_in_database": 15744,
+    "product_id_in_database": 15744,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.0030885692676586862,
+    "score_through_supply_chain": 5.2197950708039486e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 32,
+    "id_in_database": 19235,
+    "product_id_in_database": 19235,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.0030899999876529693,
+    "score_through_supply_chain": 7.924257289733529e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 33,
+    "id_in_database": 15744,
+    "product_id_in_database": 15744,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.007021861354276198,
+    "score_through_supply_chain": 1.1867202613430276e-10,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 34,
+    "id_in_database": 22738,
+    "product_id_in_database": 22738,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.07788218590790252,
+    "score_through_supply_chain": 7.045346221303854e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 35,
+    "id_in_database": 10873,
+    "product_id_in_database": 10873,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.0007062357438365632,
+    "score_through_supply_chain": 6.80763488048071e-11,
+    "score_of_node": 3.573827753290754e-12
+  },
+  {
+    "id_in_graph": 36,
+    "id_in_database": 21933,
+    "product_id_in_database": 21933,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.00025434906919330496,
+    "score_through_supply_chain": 7.89045348206187e-11,
+    "score_of_node": 7.627256772269033e-11
+  },
+  {
+    "id_in_graph": 37,
+    "id_in_database": 23639,
+    "product_id_in_database": 23639,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.011080081224948534,
+    "score_through_supply_chain": 6.398510628165242e-11,
+    "score_of_node": 4.545989468876402e-11
+  },
+  {
+    "id_in_graph": 38,
+    "id_in_database": 24545,
+    "product_id_in_database": 24545,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.016147195507919734,
+    "score_through_supply_chain": 1.0116699400369182e-10,
+    "score_of_node": 7.270470225292782e-11
+  },
+  {
+    "id_in_graph": 39,
+    "id_in_database": 20850,
+    "product_id_in_database": 20850,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.000640643250774745,
+    "score_through_supply_chain": 8.770507237494224e-11,
+    "score_of_node": 3.848526052900693e-12
+  },
+  {
+    "id_in_graph": 40,
+    "id_in_database": 22994,
+    "product_id_in_database": 22994,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.004937721721112164,
+    "score_through_supply_chain": 8.632680825374603e-11,
+    "score_of_node": 6.28758854502557e-11
+  },
+  {
+    "id_in_graph": 41,
+    "id_in_database": 7920,
+    "product_id_in_database": 7920,
+    "product_scaling_amount": 1.0,
+    "process_amount": 8.566639162231135e-12,
+    "score_through_supply_chain": 8.523382689970427e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 42,
+    "id_in_database": 24073,
+    "product_id_in_database": 24073,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.01736472742786499,
+    "score_through_supply_chain": 1.1260375042519595e-10,
+    "score_of_node": 8.121505700807847e-11
+  },
+  {
+    "id_in_graph": 43,
+    "id_in_database": 16534,
+    "product_id_in_database": 16534,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.11001847970258631,
+    "score_through_supply_chain": 7.782968297639333e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 44,
+    "id_in_database": 25944,
+    "product_id_in_database": 25944,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.0003419301105187855,
+    "score_through_supply_chain": 5.869583006080022e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 45,
+    "id_in_database": 12412,
+    "product_id_in_database": 12412,
+    "product_scaling_amount": 0.9978477954864502,
+    "process_amount": 0.0004401500325216241,
+    "score_through_supply_chain": 8.350524918404201e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 46,
+    "id_in_database": 8652,
+    "product_id_in_database": 8652,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.000423694032402217,
+    "score_through_supply_chain": 7.9774798256067e-11,
+    "score_of_node": 2.3992130460479298e-14
+  },
+  {
+    "id_in_graph": 47,
+    "id_in_database": 9997,
+    "product_id_in_database": 9997,
+    "product_scaling_amount": 1.0,
+    "process_amount": 1.025339552857456e-05,
+    "score_through_supply_chain": 7.759495884030251e-11,
+    "score_of_node": 7.460179734131848e-11
+  },
+  {
+    "id_in_graph": 48,
+    "id_in_database": 6387,
+    "product_id_in_database": 6387,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.0030899999876529693,
+    "score_through_supply_chain": 7.924257289733517e-11,
+    "score_of_node": 7.59111444540607e-11
+  },
+  {
+    "id_in_graph": 49,
+    "id_in_database": 10146,
+    "product_id_in_database": 10146,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.11001847970258631,
+    "score_through_supply_chain": 7.782968297639332e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 50,
+    "id_in_database": 19235,
+    "product_id_in_database": 19235,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.002970499029021776,
+    "score_through_supply_chain": 7.617798925219864e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 51,
+    "id_in_database": 6387,
+    "product_id_in_database": 6387,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.002970499029021776,
+    "score_through_supply_chain": 7.617798925219855e-11,
+    "score_of_node": 7.297539863875357e-11
+  },
+  {
+    "id_in_graph": 52,
+    "id_in_database": 10536,
+    "product_id_in_database": 10536,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.07788218590790252,
+    "score_through_supply_chain": 7.04534622130385e-11,
+    "score_of_node": 6.284775114238809e-13
+  },
+  {
+    "id_in_graph": 53,
+    "id_in_database": 25889,
+    "product_id_in_database": 25889,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.07788218590790252,
+    "score_through_supply_chain": 6.087675402773038e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 54,
+    "id_in_database": 12412,
+    "product_id_in_database": 12412,
+    "product_scaling_amount": 0.9978477954864502,
+    "process_amount": 0.0003381801183529974,
+    "score_through_supply_chain": 6.415952053977986e-11,
+    "score_of_node": 0.0
+  },
+  {
+    "id_in_graph": 55,
+    "id_in_database": 8652,
+    "product_id_in_database": 8652,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.00032553649309613773,
+    "score_through_supply_chain": 6.129330619667244e-11,
+    "score_of_node": 1.843385418417941e-14
+  },
+  {
+    "id_in_graph": 56,
+    "id_in_database": 9997,
+    "product_id_in_database": 9997,
+    "product_scaling_amount": 1.0,
+    "process_amount": 7.877983090238862e-06,
+    "score_through_supply_chain": 5.961847194211048e-11,
+    "score_of_node": 5.731873858942394e-11
+  },
+  {
+    "id_in_graph": 57,
+    "id_in_database": 15468,
+    "product_id_in_database": 15468,
+    "product_scaling_amount": 1.0,
+    "process_amount": 0.07788214412864229,
+    "score_through_supply_chain": 6.087671272503212e-11,
+    "score_of_node": 4.042257649455825e-12
+  }
+]

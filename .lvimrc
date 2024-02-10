@@ -1,0 +1,5 @@
+" Add exclusions for Ctrl-P lookup
+" See Plugins.vim, CtrlP section
+" TODO: To add these settings only once!
+" let g:ctrlp_custom_ignore['dir'] = substitute(g:ctrlp_custom_ignore['dir'], ')\$', "|publish|build|.next)$", "")
+" let g:ctrlp_custom_ignore['file'] = substitute(g:ctrlp_custom_ignore['file'], '))\$', "|publish|build|session)|build-tag.txt|.svg|.png)$", "")
