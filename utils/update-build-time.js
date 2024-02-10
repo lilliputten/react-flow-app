@@ -1,5 +1,5 @@
 /** @desc Update build date/time tag file with current timestamp
- *  @changed 2024.02.08, 17:50
+ *  @changed 2024.02.10, 21:33
  */
 /* eslint-disable no-console */
 
@@ -58,9 +58,11 @@ const buildInfoJsonFileName = path.resolve(prjPath, 'src', 'build-info.json');
 
 console.log('Updating build tag/time:', buildTag, '/', buildTzTime);
 
+// Update timetags...
 fs.writeFileSync(timetagFileName, buildTag, 'utf8');
 fs.writeFileSync(timestampFileName, buildTzTime, 'utf8');
 
+// Write build info data to use in the source code...
 fs.writeFileSync(buildInfoJsonFileName, JSON.stringify(allData(), undefined, 2), 'utf8');
 
 function formatDate(date, timeZone, fmt) {
