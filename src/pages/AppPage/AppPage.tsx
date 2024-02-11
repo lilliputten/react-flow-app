@@ -1,12 +1,13 @@
 import { AppWrapper } from 'src/ui/wrappers/AppWrapper';
-
-// import { ReactFlowAppRoot } from 'src/components/ReactFlowApp/ReactFlowAppRoot';
+import { FullScreenPageLayout } from 'src/ui/layouts/FullScreenPageLayout';
 
 export function AppPage() {
   return (
     <AppWrapper>
-      {/* Placeholder for the app pagfe */}
-      ReactFlowAppRoot
+      <FullScreenPageLayout>
+        {/* Placeholder for the app page */}
+        ReactFlowAppRoot
+      </FullScreenPageLayout>
     </AppWrapper>
   );
 }

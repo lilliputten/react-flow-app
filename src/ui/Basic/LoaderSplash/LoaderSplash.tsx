@@ -1,5 +1,8 @@
-import { CircularProgress, Paper } from '@mui/material';
-import classnames from 'classnames';
+import { CircularProgress } from '@mui/material';
+import classNames from 'classnames';
+
+import { ThemeWrapper } from 'src/ui/wrappers/ThemeWrapper';
+import { TMuiThemeMode } from 'src/core/types';
 
 import styles from './LoaderSplash.module.scss';
 
@@ -10,11 +13,12 @@ interface TLoaderSplashProps {
   fullSize?: boolean;
   show?: boolean;
   mode?: TSplashMode;
+  themeMode?: TMuiThemeMode;
 }
 
 export function LoaderSplash(props: TLoaderSplashProps): JSX.Element {
-  const { className, fullSize, show = true, mode } = props;
-  const resultedClassName = classnames(
+  const { className, fullSize, show = true, mode, themeMode } = props;
+  const resultedClassName = classNames(
     className,
     styles.container,
     mode && styles['mode_' + mode],
@@ -23,8 +27,8 @@ export function LoaderSplash(props: TLoaderSplashProps): JSX.Element {
   );
   // @see https://mui.com/material-ui/react-progress/
   return (
-    <Paper square elevation={0} className={resultedClassName}>
+    <ThemeWrapper themeMode={themeMode} className={resultedClassName}>
       <CircularProgress />
-    </Paper>
+    </ThemeWrapper>
   );
 }

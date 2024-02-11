@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 // MUI...
 import Stack from '@mui/material/Stack';
@@ -17,14 +17,14 @@ export function Scrollable(props: TScrollableProps): JSX.Element {
   // prettier-ignore
   return (
     <Stack
-      className={classnames(
+      className={classNames(
         className,
         styles.root,
         scrollable ? styles.scrollable : styles.clippable,
       )}
       flex={1}
     >
-      <Stack className={classnames(containerClassName, styles.container)} flex={1}>
+      <Stack className={classNames(containerClassName, styles.container)} flex={1}>
         {children}
       </Stack>
     </Stack>

@@ -20,14 +20,14 @@ import {
   HelpOutline,
   DriveFolderUpload,
   DarkMode,
-  // LightMode,
+  LightMode,
   SvgIconComponent,
 } from '@mui/icons-material';
 import classNames from 'classnames';
 
 import { TPropsWithClassName } from 'src/core/types';
 import { appTitle } from 'src/core/constants/config/app';
-// import { useSankeyAppSessionStore } from 'src/components/SankeyApp/SankeyAppSessionStore';
+import { useAppSessionStore } from 'src/store/AppSessionStore';
 
 import styles from './AppHeader.module.scss';
 
@@ -43,19 +43,25 @@ interface TNavItem {
 export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
   const { className } = props;
   const container = document.body;
-  // const sankeyAppSessionStore = useSankeyAppSessionStore();
-  // const { loadNewDataCb, sankeyAppDataStore } = sankeyAppSessionStore;
-  const hasData = false; // sankeyAppDataStore?.ready && loadNewDataCb;
+  const appSessionStore = useAppSessionStore();
+  const {
+    loadNewDataCb,
+    themeMode,
+    // appDataStore, // TODO?
+  } = appSessionStore;
+  const hasData = false; // appDataStore?.ready && loadNewDataCb;
+  const isDark = themeMode === 'dark';
+  // TODO: Check current page
   const navItems = React.useMemo<TNavItem[]>(() => {
     return [
       // { id: 'home', text: 'Home', icon: Home }, // UNUSED!
       hasData && { id: 'loadData', text: 'Load new data', icon: DriveFolderUpload },
       !hasData && { id: 'loadData', text: 'Load data', icon: DriveFolderUpload },
-      { id: 'darkTheme', text: 'Dark mode', icon: DarkMode },
-      // { id: 'lightTheme', text: 'Light mode', icon: LightMode },
+      !isDark && { id: 'darkTheme', text: 'Dark mode', icon: DarkMode },
+      isDark && { id: 'lightTheme', text: 'Light mode', icon: LightMode },
       { id: 'showHelp', text: 'Help', icon: HelpOutline },
     ].filter(Boolean) as TNavItem[];
-  }, [hasData]);
+  }, [hasData, isDark]);
 
   /** Mobile drawer state */
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -75,30 +81,34 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
         currentTarget,
         ev,
       });
-      debugger;
-      // switch (id) {
-      //   case 'showHelp': {
-      //     sankeyAppSessionStore.setShowHelp(true);
-      //     break;
-      //   }
-      //   case 'hideHelp': {
-      //     sankeyAppSessionStore.setShowHelp(false);
-      //     break;
-      //   }
-      //   case 'loadData': {
-      //     sankeyAppSessionStore.setShowHelp(false);
-      //     if (loadNewDataCb) {
-      //       loadNewDataCb();
-      //     }
-      //     sankeyAppSessionStore.setReady(true);
-      //     break;
-      //   }
-      // }
+      switch (id) {
+        case 'lightTheme': {
+          appSessionStore.setThemeMode('light');
+          break;
+        }
+        case 'darkTheme': {
+          appSessionStore.setThemeMode('dark');
+          break;
+        }
+        case 'showHelp': {
+          appSessionStore.setShowHelp(true);
+          break;
+        }
+        case 'hideHelp': {
+          appSessionStore.setShowHelp(false);
+          break;
+        }
+        case 'loadData': {
+          appSessionStore.setShowHelp(false);
+          if (loadNewDataCb) {
+            loadNewDataCb();
+          }
+          appSessionStore.setReady(true);
+          break;
+        }
+      }
     },
-    [
-      // sankeyAppSessionStore,
-      // loadNewDataCb,
-    ],
+    [appSessionStore, loadNewDataCb],
   );
 
   const drawer = (

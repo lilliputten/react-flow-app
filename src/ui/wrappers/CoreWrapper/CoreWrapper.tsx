@@ -1,6 +1,6 @@
 import React from 'react';
 import { CssBaseline, Typography } from '@mui/material';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 import { WithToastsWrapper } from 'src/ui/Basic';
 import styles from './CoreWrapper.module.scss';
@@ -18,7 +18,7 @@ export function CoreWrapper(props: TCoreWrapperProps) {
     <>
       {/* Theme root for app-through typograpy support */}
       <CssBaseline />
-      <Typography className={classnames(className, styles.container)} component="div">
+      <Typography className={classNames(className, styles.container)} component="div">
         {/* Toasts support */}
         <WithToastsWrapper>
           {/* Core content */}

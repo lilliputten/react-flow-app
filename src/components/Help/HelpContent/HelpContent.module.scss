@@ -1,0 +1,38 @@
+.root {
+  /*!KEEP*/
+}
+.section {
+  margin: $containerPaddingPx 0;
+}
+.content {
+  h2:global(.MuiTypography-h2) {
+    font-size: 2.25rem;
+  }
+  h3:global(.MuiTypography-h3) {
+    font-size: 1.5rem;
+  }
+  code {
+    display: inline-block;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0 4px;
+  }
+  pre > code:only-child {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  img {
+    display: block;
+    background-color: #eee;
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 1px solid color.change(black, $alpha: 0.1);
+    box-shadow: 2px 2px 8px color.change(black, $alpha: 0.1);
+    max-width: 100%;
+  }
+  img + h2 {
+    margin-top: 30px;
+  }
+}

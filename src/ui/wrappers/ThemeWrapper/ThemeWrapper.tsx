@@ -1,6 +1,6 @@
 import React from 'react';
 import { Paper } from '@mui/material';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 import { TMuiThemeMode, defaultMuiThemeMode } from 'src/core/types';
 import { createCustomizedMuiTheme, ThemeProvider } from 'src/core/global/mui-theme';
@@ -19,7 +19,7 @@ export interface TThemeWrapperProps extends JSX.IntrinsicAttributes, TThemeWrapp
 export function ThemeWrapper(props: TThemeWrapperProps) {
   const { children, fullSize, className, themeMode = defaultMuiThemeMode } = props;
   const theme = React.useMemo(() => createCustomizedMuiTheme({ mode: themeMode }), [themeMode]);
-  const paperClassName = classnames(
+  const paperClassName = classNames(
     className,
     styles.paperContainer,
     fullSize && styles.fullSize,

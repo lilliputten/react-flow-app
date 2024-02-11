@@ -5,10 +5,9 @@ import Button from '@mui/material/Button';
 
 import { LoaderSplash } from 'src/ui/Basic';
 import { AppWrapper } from 'src/ui/wrappers/AppWrapper';
+import { FullScreenPageLayout } from 'src/ui/layouts/FullScreenPageLayout';
 
 import styles from './TestPage.module.scss';
-import { ThemeWrapper } from 'src/ui/wrappers/ThemeWrapper';
-import { FullScreenPageLayout } from 'src/ui/layouts/FullScreenPageLayout';
 
 export function TestPage() {
   const [waiting, setWaiting] = React.useState(true);
