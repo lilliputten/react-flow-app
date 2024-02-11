@@ -56,7 +56,7 @@ const timetagFileName = path.resolve(prjPath, 'build-timetag.txt');
 // const versionFileName = path.resolve(prjPath, 'build-version.txt');
 const buildInfoJsonFileName = path.resolve(prjPath, 'src', 'build-info.json');
 
-console.log('Updating build tag/time:', buildTag, '/', buildTzTime);
+console.log('Updated build tag/time:', buildTag, '/', buildTzTime);
 
 // Update timetags...
 fs.writeFileSync(timetagFileName, buildTag, 'utf8');
