@@ -4,8 +4,8 @@ import classNames from 'classnames';
 
 import { ThemeWrapper } from 'src/ui/wrappers/ThemeWrapper';
 import { TMuiThemeMode } from 'src/core/types';
-// import { AppHeader } from 'src/components/App/AppHeader';
-// import { AppFooter } from 'src/components/App/AppFooter';
+import { AppHeader } from 'src/components/App/AppHeader';
+import { AppFooter } from 'src/components/App/AppFooter';
 
 import styles from './FullScreenPageLayout.module.scss';
 
@@ -21,11 +21,11 @@ export function FullScreenPageLayout(props: TFullScreenPageLayoutProps): JSX.Ele
   return (
     <ThemeWrapper className={classNames(className, styles.root)} themeMode={themeMode} fullSize>
       {/*
-      <AppHeader className={styles.header} />
       */}
+      <AppHeader className={styles.header} />
       <Box className={styles.content}>{children}</Box>
-      {/* // TODO: Show app footer
       <AppFooter className={styles.footer} />
+      {/* // TODO: Show app footer
       */}
     </ThemeWrapper>
   );

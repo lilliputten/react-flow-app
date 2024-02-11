@@ -8,6 +8,7 @@ import { AppWrapper } from 'src/ui/wrappers/AppWrapper';
 
 import styles from './TestPage.module.scss';
 import { ThemeWrapper } from 'src/ui/wrappers/ThemeWrapper';
+import { FullScreenPageLayout } from 'src/ui/layouts/FullScreenPageLayout';
 
 export function TestPage() {
   const [waiting, setWaiting] = React.useState(true);
@@ -18,11 +19,11 @@ export function TestPage() {
   }, []);
   return (
     <AppWrapper className={classNames(styles.root)}>
-      <ThemeWrapper>
+      <FullScreenPageLayout>
         <div>TestPage</div>
         <Button variant="contained">Hello world</Button>
         <LoaderSplash show={waiting} mode="cover" fullSize />
-      </ThemeWrapper>
+      </FullScreenPageLayout>
     </AppWrapper>
   );
 }

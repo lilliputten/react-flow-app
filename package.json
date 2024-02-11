@@ -123,16 +123,13 @@
     "build-and-publish": "echo --Build and publish-- && npm-run-all build publish",
     "patch-build": "echo --Patch build-- && gulp patchBuild",
     "serve-build": "echo --Serve build /at alternate port 3003/-- && serve build -l 3003",
-    "start-app-server": "echo --Start app web server-- && python start-app.py",
-    "start-app-dev-server": "echo --Start app web server-- && cd build && python start-app.py",
     "cra-build": "echo --CRA build-- && craco build",
     "build": "echo --Make build-- && npm-run-all cra-build patch-build",
     "start-analyzer": "echo --Start build analyzer-- && cross-env START_ANALYZER=yes npm-run-all cra-build",
     "start-https": "echo --Start dev server with https- && cross-env HTTPS=true craco start",
-    "start": "echo --Start dev server-- && cross-env GENERATE_SOURCEMAP=false craco start",
+    "start": "echo --Start dev server-- && cross-env GENERATE_SOURCEMAP=true craco start",
     "test": "craco test --watchAll=false",
     "test-watch": "craco test",
-    "start-app": "echo --Start dev server /with .venv/-- && python start-app.py --use-public",
     "help": "echo --List all available script commands-- && npm-package-user-scripts-list"
   }
 }

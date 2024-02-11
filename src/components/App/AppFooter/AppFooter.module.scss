@@ -1,0 +1,6 @@
+.root {
+  border-top: 1px solid color.change(black, $alpha: 0.1);
+  box-shadow: 0 -4px 5px color.change(black, $alpha: 0.1);
+  z-index: 1000;
+  position: relative;
+}
