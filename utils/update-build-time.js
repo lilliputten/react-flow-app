@@ -1,5 +1,5 @@
 /** @desc Update build date/time tag file with current timestamp
- *  @changed 2024.02.10, 21:33
+ *  @changed 2024.02.11, 20:01
  */
 /* eslint-disable no-console */
 
@@ -63,7 +63,7 @@ fs.writeFileSync(timetagFileName, buildTag, 'utf8');
 fs.writeFileSync(timestampFileName, buildTzTime, 'utf8');
 
 // Write build info data to use in the source code...
-fs.writeFileSync(buildInfoJsonFileName, JSON.stringify(getBuildInfo(), undefined, 2), 'utf8');
+fs.writeFileSync(buildInfoJsonFileName, JSON.stringify(getBuildInfo(), undefined, 2) + '\n', 'utf8');
 
 function formatDate(date, timeZone, fmt) {
   let dayjsDate = dayjs(date);

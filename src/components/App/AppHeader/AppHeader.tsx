@@ -76,11 +76,12 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
     (ev) => {
       const { currentTarget } = ev;
       const { id } = currentTarget;
-      console.log('[AppHeader:handleNavItemClick]', {
-        id,
-        currentTarget,
-        ev,
-      });
+      /* console.log('[AppHeader:handleNavItemClick]', {
+       *   id,
+       *   currentTarget,
+       *   ev,
+       * });
+       */
       switch (id) {
         case 'lightTheme': {
           appSessionStore.setThemeMode('light');
