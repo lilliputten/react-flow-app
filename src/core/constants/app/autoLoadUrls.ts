@@ -1,9 +1,10 @@
 /** Default file names for specific data types */
 export const defaultDataFiles = {
-  edges: 'edges.json',
-  flows: 'flows.json',
-  graphs: 'nodes-supply-chain.json', // 'graphs.json',
-  nodes: 'nodes.json',
+  test: 'test.json',
+  // edges: 'edges.json',
+  // flows: 'flows.json',
+  // graphs: 'nodes-supply-chain.json', // 'graphs.json',
+  // nodes: 'nodes.json',
 };
 
 export const dataUrlPrefix = '/data/';

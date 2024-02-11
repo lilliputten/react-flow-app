@@ -1,0 +1,18 @@
+.root,
+.DEBUG {
+  /*!KEEP*/
+}
+
+.root {
+  /* // Could be used instead of `maxWidth` prop
+   * :global(.MuiDialog-paper) {
+   *   min-width: 300px;
+   * }
+   */
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

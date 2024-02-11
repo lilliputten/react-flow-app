@@ -1,0 +1,16 @@
+.root,
+.container {
+  position: relative;
+  overflow: hidden;
+}
+.scrollable {
+  &.root {
+    overflow: auto;
+  }
+  .container {
+    overflow: visible;
+  }
+}
+.clippable {
+  /*!KEEP*/
+}

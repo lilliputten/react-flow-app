@@ -7,8 +7,8 @@
 
 The react-flow data visualization application.
 
-- Version: 0.0.0
-- Last changes timestamp: 2024.02.10 21:27 +0700
+- Version: 0.0.1
+- Last changes timestamp: 2024.02.11 20:03 +0700
 
 TODO: Add the project description.
 

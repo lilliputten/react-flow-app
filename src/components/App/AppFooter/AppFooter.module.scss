@@ -1,0 +1,28 @@
+.root {
+  border-top: 1px solid color.change(black, $alpha: 0.1);
+  box-shadow: 0 -4px 5px color.change(black, $alpha: 0.1);
+  z-index: 1000;
+  position: relative;
+  font-size: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // flex-wrap: wrap;
+  gap: 8px;
+  padding: 4px 8px;
+}
+.root,
+.leftInfo,
+.rightInfo {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.leftInfo {
+  flex: 1;
+}
+.rightInfo {
+  flex-shrink: 1;
+  justify-content: flex-end;
+  text-align: right;
+}

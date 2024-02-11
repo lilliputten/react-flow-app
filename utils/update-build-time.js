@@ -1,5 +1,5 @@
 /** @desc Update build date/time tag file with current timestamp
- *  @changed 2024.02.10, 21:33
+ *  @changed 2024.02.11, 20:01
  */
 /* eslint-disable no-console */
 
@@ -13,7 +13,7 @@ const dayjs = require('dayjs'); // @see https://day.js.org/docs/en/display/forma
 dayjs.extend(dayjsUtc);
 dayjs.extend(dayjsTimezone);
 
-const { allData } = require('./gulp-helpers.js');
+const { getBuildInfo } = require('./gulp-helpers.js');
 
 const currPath = path.resolve(__dirname);
 const prjPath = path.dirname(path.basename(currPath));
@@ -56,14 +56,14 @@ const timetagFileName = path.resolve(prjPath, 'build-timetag.txt');
 // const versionFileName = path.resolve(prjPath, 'build-version.txt');
 const buildInfoJsonFileName = path.resolve(prjPath, 'src', 'build-info.json');
 
-console.log('Updating build tag/time:', buildTag, '/', buildTzTime);
+console.log('Updated build tag/time:', buildTag, '/', buildTzTime);
 
 // Update timetags...
 fs.writeFileSync(timetagFileName, buildTag, 'utf8');
 fs.writeFileSync(timestampFileName, buildTzTime, 'utf8');
 
 // Write build info data to use in the source code...
-fs.writeFileSync(buildInfoJsonFileName, JSON.stringify(allData(), undefined, 2), 'utf8');
+fs.writeFileSync(buildInfoJsonFileName, JSON.stringify(getBuildInfo(), undefined, 2) + '\n', 'utf8');
 
 function formatDate(date, timeZone, fmt) {
   let dayjsDate = dayjs(date);

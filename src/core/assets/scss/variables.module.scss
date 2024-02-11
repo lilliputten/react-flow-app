@@ -1,4 +1,4 @@
-// Export variables for use in js code.
+// Export variables from scss for use in js code.
 // NOTE: Remember to use `parseInt` to extract numeric values.
 
 /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
@@ -11,6 +11,12 @@
 
   primaryColor: $primaryColor;
   secondaryColor: $secondaryColor;
+
+  defaultBackgroundColor: $defaultBackgroundColor;
+  defaultBackgroundColorDark: $defaultBackgroundColorDark;
+
+  defaultTextColor: $defaultTextColor;
+  defaultTextColorDark: $defaultTextColorDark;
 
   errorColor: $errorColor;
   dangerColor: $dangerColor;

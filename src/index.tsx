@@ -2,24 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import reportWebVitals from 'src/reportWebVitals';
-// import { App } from 'src/app/App';
+import { AppPage } from 'src/pages/AppPage';
+// import { TestPage } from 'src/pages/TestPage';
 
 import 'src/core/global/global-includes';
 import 'src/core/global/global-styles.scss';
-
-import * as buildInfo from 'src/core/constants/app/build';
-
-console.log('[index:buildInfo]', {
-  buildInfo,
-});
 
 const rootNode = document.getElementById('root') as HTMLElement;
 const root = ReactDOM.createRoot(rootNode);
 
 const __debugUseStrictMode = false;
 
-// let RootNode = <App />;
-let RootNode = <>RootNode</>;
+let RootNode = <AppPage />;
+// let RootNode = <TestPage />;
 
 if (__debugUseStrictMode) {
   RootNode = (

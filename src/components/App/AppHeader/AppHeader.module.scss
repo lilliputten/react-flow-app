@@ -1,0 +1,23 @@
+.root {
+  position: relative !important;
+}
+
+.navButtons {
+  gap: 8px;
+  :global(.MuiButton-startIcon) {
+    opacity: 0.5;
+  }
+  :global(.MuiButton-root) {
+    transition: opacity $animationTimeMs;
+    :global(.theme-mode-light) &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.drawerListItem {
+  :global(.MuiListItemIcon-root) {
+    opacity: 0.5;
+    min-width: 36px;
+  }
+}

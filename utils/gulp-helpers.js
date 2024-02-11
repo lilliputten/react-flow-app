@@ -1,6 +1,6 @@
 /** @module gulp-helpers
  *  @since 2023.04.07, 00:00
- *  @changed 2023.06.19, 20:35
+ *  @changed 2024.02.11, 15:06
  */
 
 const fs = require('fs');
@@ -8,6 +8,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const dayjsUtc = require('dayjs/plugin/utc.js');
+// @ts-expect-error: This module doesn't have typings
 const dayjsTimezone = require('dayjs-timezone-iana-plugin'); // @see https://day.js.org/docs/en/plugin/timezone
 const dayjs = require('dayjs'); // @see https://day.js.org/docs/en/display/format
 
@@ -35,7 +36,7 @@ const envData = readProjectEnv();
 
 const timeZone = config.timeZone || '';
 
-// // UNUSED: These parameters retrieving from `package.json` (prjConfig)
+// // UNUSED: These parameters are retrieving from `package.json` (prjConfig)
 // const timestampFileName = path.resolve(prjPath, 'build-timestamp.txt');
 // const timetagFileName = path.resolve(prjPath, 'build-timetag.txt');
 // const versionFileName = path.resolve(prjPath, 'build-version.txt');
@@ -82,13 +83,18 @@ function getGitBranch() {
   return buf.toString().trim();
 }
 
-function getBuildInfoText() {
-  const projectName = getProjectName();
-  const timestamp = getTimestamp();
-  const version = getVersion();
-  const currentTimeStr = getCurrentTimeStr();
-  const gitCommitHash = getGitCommitHash();
-  const gitBranch = getGitBranch();
+function getBuildInfoText(buildInfo) {
+  if (!buildInfo) {
+    buildInfo = getBuildInfo();
+  }
+  const {
+    projectName,
+    timestamp,
+    version,
+    currentTimeStr,
+    gitCommitHash,
+    gitBranch,
+  } = buildInfo;
   return [
     'Project: ' + projectName,
     'Version: ' + version,
@@ -99,7 +105,7 @@ function getBuildInfoText() {
   ].join('\n');
 }
 
-function allData() {
+function getBuildInfo() {
   const projectName = getProjectName();
   const timestamp = getTimestamp();
   const timetag = getTimetag();
@@ -108,8 +114,7 @@ function allData() {
   const currentTimeTag = getCurrentTimeTag();
   const gitCommitHash = getGitCommitHash();
   const gitBranch = getGitBranch();
-  const buildInfoText = getBuildInfoText();
-  const allData = {
+  const buildInfo = {
     projectName,
     timestamp,
     timetag,
@@ -118,10 +123,18 @@ function allData() {
     currentTimeTag,
     gitCommitHash,
     gitBranch,
+  };
+  return buildInfo;
+}
+
+function getAllData() {
+  const buildInfo = getBuildInfo();
+  const buildInfoText = getBuildInfoText(buildInfo);
+  const getAllData = {
+    ...buildInfo,
     buildInfoText,
   };
-  // console.log('allData', allData);
-  return allData;
+  return getAllData;
 }
 
 function formatDate(date, timeZone, fmt) {
@@ -196,13 +209,14 @@ function readProjectEnv() {
 }
 
 function getEnvVariable(key) {
-  return process.env[key] != undefined ? process.env[key] : envData[key];
+  return process.env[key] != null ? process.env[key] : envData[key];
 }
 
 module.exports = {
   prjPath,
+  getBuildInfo,
   getBuildInfoText,
-  allData,
+  getAllData,
   getProjectRelativeFileName,
   truthyValue,
   getEnvVariable,

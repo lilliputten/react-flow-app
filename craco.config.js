@@ -2,18 +2,6 @@
 
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-// const fs = require('fs');
-// const webpack = require('webpack');
-// const { overrideCracoConfig } = require('craco-plugin-env');
-
-/* // Trying to provide build info to the source code...
- * const { allData } = require('./utils/gulp-helpers.js');
- * const buildInfo = allData();
- * process.env.REACT_BUILD_INFO = JSON.stringify(buildInfo);
- * // Write build info data to use in the source code...
- * // console.log('Writting build info:', buildInfo);
- * fs.writeFileSync('./src/build-info.json', JSON.stringify(buildInfo, undefined, 2), 'utf8');
- */
 
 const startAnalyzer = !!process.env.START_ANALYZER;
 

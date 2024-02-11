@@ -1,0 +1,13 @@
+.root {
+  @include expandableFullSizeContainer;
+  align-items: stretch;
+}
+
+.header,
+.footer {
+  /*!KEEP*/
+}
+
+.content {
+  @include fullSizeBlock;
+}
