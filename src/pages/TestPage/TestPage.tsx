@@ -7,6 +7,7 @@ import { LoaderSplash } from 'src/ui/Basic';
 import { AppWrapper } from 'src/ui/wrappers/AppWrapper';
 
 import styles from './TestPage.module.scss';
+import { ThemeWrapper } from 'src/ui/wrappers/ThemeWrapper';
 
 export function TestPage() {
   const [waiting, setWaiting] = React.useState(true);
@@ -17,9 +18,11 @@ export function TestPage() {
   }, []);
   return (
     <AppWrapper className={classNames(styles.root)}>
-      <div>TestPage</div>
-      <Button variant="contained">Hello world</Button>
-      <LoaderSplash show={waiting} mode="cover" fullSize />
+      <ThemeWrapper>
+        <div>TestPage</div>
+        <Button variant="contained">Hello world</Button>
+        <LoaderSplash show={waiting} mode="cover" fullSize />
+      </ThemeWrapper>
     </AppWrapper>
   );
 }

@@ -1,16 +1,31 @@
-import { ThemeProvider, createTheme, ThemeOptions, PaletteOptions } from '@mui/material';
+import {
+  ThemeProvider,
+  createTheme,
+  ThemeOptions,
+  PaletteOptions,
+  PaletteColorOptions,
+} from '@mui/material';
 import { TypographyOptions } from '@mui/material/styles/createTypography';
-// import { lightBlue } from '@mui/material/colors';
+import tinycolor from 'tinycolor2';
 
 import { TMuiThemeMode, defaultMuiThemeMode } from 'src/core/types';
 
-import scssVariables from 'src/core/assets/scss/variables.module.scss';
+import {
+  themeControlsRadius,
+  primaryColor,
+  secondaryColor,
+  defaultBackgroundColor,
+  defaultBackgroundColorDark,
+  defaultTextColor,
+  defaultTextColorDark,
+} from 'src/core/assets/scss';
 
 export interface TMuiThemeParams {
   mode?: TMuiThemeMode;
 }
 
 /* // Example mui color: lightBlue:
+ * import { lightBlue } from '@mui/material/colors';
  * lightBlue:
  *   50: '#e1f5fe'
  *   100: '#b3e5fc'
@@ -27,18 +42,32 @@ export interface TMuiThemeParams {
  *   A400: '#00b0ff'
  *   A700: '#0091ea'
  */
+/* Default plaette primary color object:
+ *   contrastText: "#fff"
+ *   dark: "#1565c0"
+ *   light: "#42a5f5"
+ *   main: "#1976d2"
+ */
+
+function getColorObject(color: string) {
+  const darkCmp = tinycolor(color).darken(20);
+  const dark = tinycolor(color).darken(10).toHexString();
+  const light = tinycolor(color).lighten(10).toHexString();
+  const colorObj: PaletteColorOptions = {
+    main: color,
+    dark,
+    light,
+    contrastText: tinycolor.mostReadable(darkCmp, ['#fff', '#000']).toHexString(),
+  };
+  return colorObj;
+}
 
 function getMuiThemeOptions(params?: TMuiThemeParams) {
   const { mode = defaultMuiThemeMode } = params || {};
-  const {
-    // defaultFontSizePx,
-    themeControlsRadiusPx,
-  } = scssVariables;
-  // const defaultFontSize = parseInt(defaultFontSizePx);
-  const themeControlsRadius = parseInt(themeControlsRadiusPx);
   // TODO: Check for primaryMuiColors, secondaryMuiColors, defaultFontSizePx?
-  const backgroundColor = mode === 'dark' ? '#000' : '#fff';
-  const textColor = mode === 'dark' ? '#ddd' : '#333';
+  const isDark = mode === 'dark';
+  const backgroundColor = isDark ? defaultBackgroundColorDark : defaultBackgroundColor;
+  const textColor = isDark ? defaultTextColorDark : defaultTextColor;
   const background = {
     default: backgroundColor,
     paper: backgroundColor,
@@ -47,6 +76,8 @@ function getMuiThemeOptions(params?: TMuiThemeParams) {
     primary: textColor,
   };
   const palette: PaletteOptions = {
+    primary: getColorObject(primaryColor),
+    secondary: getColorObject(secondaryColor),
     mode,
     background,
     text,
@@ -85,14 +116,32 @@ function getMuiThemeOptions(params?: TMuiThemeParams) {
     // May be used in code:
     // - breakpoints
   };
+  /* console.log('[mui-theme:getMuiThemeOptions]', {
+   *   defaultBackgroundColor,
+   *   defaultBackgroundColorDark,
+   *   defaultTextColor,
+   *   defaultTextColorDark,
+   *   typography,
+   *   options,
+   *   background,
+   *   text,
+   * });
+   */
   return options;
 }
 
 export function createCustomizedMuiTheme(params?: TMuiThemeParams) {
   const options = getMuiThemeOptions(params);
   const theme = createTheme(options);
-  // DEBUG: Use this data to extend ThemeOptions data above
-  // console.log('[mui-theme]: createCustomizedMuiTheme', params, theme);
+  /* // DEBUG: Use this data to extend ThemeOptions data above
+   * console.log('[mui-theme]: createCustomizedMuiTheme', params, theme, {
+   *   contrastThreshold: theme.palette.contrastThreshold, // 3
+   *   tonalOffset: theme.palette.tonalOffset, // 0.2
+   *   primary: theme.palette.primary,
+   *   params,
+   *   theme,
+   * });
+   */
   return theme;
 }
 
