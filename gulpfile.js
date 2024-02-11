@@ -9,14 +9,7 @@ const prettify = require('gulp-html-prettify');
  * const tap = require('gulp-tap');
  */
 
-const {
-  getBuildInfoText,
-  /* // UNUSED: For relative paths processing...
-   * getProjectRelativeFileName,
-   * truthyValue,
-   * getEnvVariable,
-   */
-} = require('./utils/gulp-helpers');
+const { getBuildInfoText } = require('./utils/gulp-helpers');
 
 /* // UNUSED: For relative paths processing...
  * const cssPath = 'build/_next/static/css';
@@ -131,7 +124,7 @@ const patchBuildTasks = [
    */
   'writeBuildInfo',
   'prettifyHtml',
-  // 'copyExtraFiles',
+  // 'copyExtraFiles', // TODO: Use it to provide extra stuff to the 'build' folder
 ].filter(Boolean);
 
 gulp.task('patchBuild', gulp.parallel.apply(gulp, patchBuildTasks));

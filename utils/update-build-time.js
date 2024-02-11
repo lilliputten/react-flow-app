@@ -13,7 +13,7 @@ const dayjs = require('dayjs'); // @see https://day.js.org/docs/en/display/forma
 dayjs.extend(dayjsUtc);
 dayjs.extend(dayjsTimezone);
 
-const { allData } = require('./gulp-helpers.js');
+const { getBuildInfo } = require('./gulp-helpers.js');
 
 const currPath = path.resolve(__dirname);
 const prjPath = path.dirname(path.basename(currPath));
@@ -63,7 +63,7 @@ fs.writeFileSync(timetagFileName, buildTag, 'utf8');
 fs.writeFileSync(timestampFileName, buildTzTime, 'utf8');
 
 // Write build info data to use in the source code...
-fs.writeFileSync(buildInfoJsonFileName, JSON.stringify(allData(), undefined, 2), 'utf8');
+fs.writeFileSync(buildInfoJsonFileName, JSON.stringify(getBuildInfo(), undefined, 2), 'utf8');
 
 function formatDate(date, timeZone, fmt) {
   let dayjsDate = dayjs(date);

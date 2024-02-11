@@ -1,6 +1,6 @@
-import { TBuildInfo } from 'src/core/types/app/TBuildInfo';
-
 import buildInfoModule from 'src/build-info.json';
+
+import { TBuildInfo } from 'src/core/types/app/TBuildInfo';
 
 const buildInfo: TBuildInfo = buildInfoModule;
 
@@ -16,12 +16,7 @@ const {
   version, // "0.0.0"
 } = buildInfo;
 
-const nodeEnv = process.env.NODE_ENV;
-
-const isDev = nodeEnv === 'development';
-
 export {
-  isDev,
   buildInfoText, // "Project: react-flow-app\nVersion: 0.0.0\nBranch: 1-project-environment\nCommit: ef31eab\nFixed: 2024.02.10 19:18 +0700\nBuilt: 2024.02.10 21:04 +0700"
   currentTimeStr, // "2024.02.10 21:04 +0700"
   currentTimeTag, // "240210-2104"
