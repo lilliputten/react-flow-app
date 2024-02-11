@@ -20,13 +20,9 @@ export function FullScreenPageLayout(props: TFullScreenPageLayoutProps): JSX.Ele
   const { className, children, themeMode } = props;
   return (
     <ThemeWrapper className={classNames(className, styles.root)} themeMode={themeMode} fullSize>
-      {/*
-      */}
       <AppHeader className={styles.header} />
       <Box className={styles.content}>{children}</Box>
       <AppFooter className={styles.footer} />
-      {/* // TODO: Show app footer
-      */}
     </ThemeWrapper>
   );
 }

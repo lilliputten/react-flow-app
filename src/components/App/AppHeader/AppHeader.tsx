@@ -15,7 +15,14 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material';
-import { Menu, HelpOutline, DriveFolderUpload, SvgIconComponent } from '@mui/icons-material';
+import {
+  Menu,
+  HelpOutline,
+  DriveFolderUpload,
+  DarkMode,
+  // LightMode,
+  SvgIconComponent,
+} from '@mui/icons-material';
 import classNames from 'classnames';
 
 import { TPropsWithClassName } from 'src/core/types';
@@ -44,6 +51,8 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
       // { id: 'home', text: 'Home', icon: Home }, // UNUSED!
       hasData && { id: 'loadData', text: 'Load new data', icon: DriveFolderUpload },
       !hasData && { id: 'loadData', text: 'Load data', icon: DriveFolderUpload },
+      { id: 'darkTheme', text: 'Dark mode', icon: DarkMode },
+      // { id: 'lightTheme', text: 'Light mode', icon: LightMode },
       { id: 'showHelp', text: 'Help', icon: HelpOutline },
     ].filter(Boolean) as TNavItem[];
   }, [hasData]);
