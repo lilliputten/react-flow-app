@@ -1,10 +1,6 @@
 div.paperContainer {
-  /* !KEEP */
   // TODO: Adjust paper properties?
-  // font-size: $defaultFontSizePx;
-  // border-radius: 0;
-  // box-shadow: none;
-  // border: none;
+  font-size: $defaultFontSizePx;
 }
 .fullSize {
   @include singleFullSizeContainer;

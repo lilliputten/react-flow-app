@@ -4,6 +4,7 @@ import {
   ThemeOptions,
   PaletteOptions,
   PaletteColorOptions,
+  Theme,
 } from '@mui/material';
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 import tinycolor from 'tinycolor2';
@@ -11,6 +12,8 @@ import tinycolor from 'tinycolor2';
 import { TMuiThemeMode, defaultMuiThemeMode } from 'src/core/types';
 
 import {
+  defaultFontSize,
+  defaultFontSizeRem,
   themeControlsRadius,
   primaryColor,
   secondaryColor,
@@ -85,14 +88,16 @@ function getMuiThemeOptions(params?: TMuiThemeParams) {
   // @see https://mui.com/material-ui/customization/typography/
   const typography: TypographyOptions = {
     // TODO: To investigate the method of customizing mui theme font properties!
-    // fontSize: defaultFontSize,
-    // htmlFontSize: defaultFontSize,
+    fontSize: defaultFontSizeRem,
+    htmlFontSize: defaultFontSizeRem,
     allVariants: {
       // NOTE: This setting affects all the elements.
-      // fontSize: defaultFontSize,
+      fontSize: defaultFontSize,
     },
     button: {
       textTransform: 'none',
+      fontWeight: 'normal',
+      lineHeight: 'normal', // Fix vertical alignment bug
     },
   };
   const options: ThemeOptions = {
@@ -132,12 +137,13 @@ function getMuiThemeOptions(params?: TMuiThemeParams) {
 
 export function createCustomizedMuiTheme(params?: TMuiThemeParams) {
   const options = getMuiThemeOptions(params);
-  const theme = createTheme(options);
+  const theme: Theme = createTheme(options);
   /* // DEBUG: Use this data to extend ThemeOptions data above
    * console.log('[mui-theme]: createCustomizedMuiTheme', params, theme, {
-   *   contrastThreshold: theme.palette.contrastThreshold, // 3
-   *   tonalOffset: theme.palette.tonalOffset, // 0.2
-   *   primary: theme.palette.primary,
+   *   // contrastThreshold: theme.palette.contrastThreshold, // 3
+   *   // tonalOffset: theme.palette.tonalOffset, // 0.2
+   *   // primary: theme.palette.primary,
+   *   breakpoints: theme.breakpoints,
    *   params,
    *   theme,
    * });

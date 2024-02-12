@@ -1,15 +1,15 @@
+// NOTE: It isn't used: used the `Demo` inside the `AppRouterWrapper` component
+
 import { AppWrapper } from 'src/ui/wrappers/AppWrapper';
 import { FullScreenPageLayout } from 'src/ui/layouts/FullScreenPageLayout';
-import { AppRouterWrapper } from 'src/ui/wrappers/AppRouterWrapper';
+import { Demo } from 'src/components/Demo';
 
-export function AppPage() {
+export function DemoPage() {
   return (
     <AppWrapper>
       <FullScreenPageLayout>
-        <AppRouterWrapper>
-          {/* Placeholder for the app page */}
-          ReactFlowAppRoot
-        </AppRouterWrapper>
+        {/* Placeholder for the app page */}
+        <Demo />
       </FullScreenPageLayout>
     </AppWrapper>
   );

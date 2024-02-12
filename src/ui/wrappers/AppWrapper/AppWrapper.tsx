@@ -15,10 +15,8 @@ export function AppWrapper(props: TAppWrapperProps): JSX.Element {
   return (
     <CoreWrapper className={className}>
       <AppSessionStoreProvider>
-        <AppRouterWrapper>
-          {/* TODO: Expose root control nodes or use custom hooks? */}
-          {children}
-        </AppRouterWrapper>
+        {/* TODO: Expose root control nodes or use custom hooks? */}
+        {children}
       </AppSessionStoreProvider>
     </CoreWrapper>
   );

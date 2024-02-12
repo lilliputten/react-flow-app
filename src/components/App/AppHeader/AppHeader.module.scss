@@ -1,5 +1,6 @@
 .root {
   position: relative !important;
+  // min-height: 56px;
 }
 
 .navButtons {
@@ -15,9 +16,25 @@
   }
 }
 
-.drawerListItem {
-  :global(.MuiListItemIcon-root) {
-    opacity: 0.5;
-    min-width: 36px;
+.appTitle {
+  &:global(.MuiTypography-root) {
+    font-size: 18px;
+    font-weight: normal;
   }
+}
+
+.ListItemIcon {
+  &:global(.MuiListItemIcon-root) {
+    color: $primaryColor;
+    min-width: 40px;
+  }
+}
+
+.drawTitle:global(.MuiTypography-root) {
+  display: flex;
+  align-items: center;
+  margin: 0 16px;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
 }

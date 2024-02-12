@@ -1,0 +1,29 @@
+.root {
+  @include fullSizeBlock;
+  width: 100%;
+  display: flex;
+}
+
+.selectorBox,
+.demoBox {
+  width: 100%;
+}
+
+.selectorBox {
+  /*!KEEP*/
+  padding: 24px;
+}
+
+.demoBox {
+  flex: 1;
+  @include fullSizeBlock;
+}
+.scrollable {
+  @include scrollableContainer;
+  width: 100%;
+  padding: 12px 24px;
+}
+
+.dull {
+  opacity: 0.5;
+}
