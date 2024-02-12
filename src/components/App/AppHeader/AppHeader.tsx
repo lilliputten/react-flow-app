@@ -127,10 +127,12 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
   const treshold: Breakpoint = 'md';
   const midTreshold: Breakpoint = 'sm';
 
+  const toolbarHeight = 56;
+
   // TODO: Show other menu items for mobile mode...
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography className={styles.drawerHeader} variant="h6" sx={{ my: 2 }}>
+      <Typography className={styles.drawTitle} variant="h6" sx={{ my: 2, height: toolbarHeight }}>
         {appTitle}
       </Typography>
       <Divider />
@@ -150,8 +152,6 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
       </List>
     </Box>
   );
-
-  const toolbarHeight = 56;
 
   return (
     <>

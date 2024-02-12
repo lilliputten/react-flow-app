@@ -12,6 +12,8 @@ import tinycolor from 'tinycolor2';
 import { TMuiThemeMode, defaultMuiThemeMode } from 'src/core/types';
 
 import {
+  defaultFontSize,
+  defaultFontSizeRem,
   themeControlsRadius,
   primaryColor,
   secondaryColor,
@@ -86,11 +88,11 @@ function getMuiThemeOptions(params?: TMuiThemeParams) {
   // @see https://mui.com/material-ui/customization/typography/
   const typography: TypographyOptions = {
     // TODO: To investigate the method of customizing mui theme font properties!
-    // fontSize: defaultFontSize,
-    // htmlFontSize: defaultFontSize,
+    fontSize: defaultFontSizeRem,
+    htmlFontSize: defaultFontSizeRem,
     allVariants: {
       // NOTE: This setting affects all the elements.
-      // fontSize: defaultFontSize,
+      fontSize: defaultFontSize,
     },
     button: {
       textTransform: 'none',

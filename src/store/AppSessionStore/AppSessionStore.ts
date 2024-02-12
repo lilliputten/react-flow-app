@@ -45,8 +45,9 @@ const queryParameters = [
   'showLeftPanel',
   'themeMode',
   'useDemo',
+  'showDemo',
 
-  // // Basic app options...
+  // // Other basic app options...
   // 'verticalLayout',
   // 'nodesColorMode',
   // 'baseNodesColor',
@@ -70,6 +71,7 @@ export type TQueryParameter = (typeof queryParameters)[number];
 /** Parameters not supposed to be saved -- not included into the `saveableParameters` list */
 const nonSaveableParameters = [
   'useDemo',
+  'showDemo',
   'doAutoLoad',
   'doAutoStart',
   // 'autoLoad*', // Applyed via special check (see below)
@@ -86,6 +88,7 @@ const saveableParameters = queryParameters.filter(
 const updatableParameters: TUpdatableParameter<TQueryParameter>[] = [
   { id: 'showLeftPanel', type: 'boolean' },
   { id: 'useDemo', type: 'boolean' },
+  { id: 'showDemo', type: 'boolean' },
   { id: 'themeMode', type: 'string', validValues: validMuiThemeModes },
   // // Basic app options...
   // { id: 'verticalLayout', type: 'boolean' },
@@ -222,7 +225,7 @@ export class AppSessionStore {
           this[id] = val;
         });
         // eslint-disable-next-line no-console
-        console.log('[AppSessionStore:restoreParameters] Restored parameter', id, '=', val);
+        console.info('[AppSessionStore:restoreParameters] Updated parameter', id, '=', val);
       }
     });
   }

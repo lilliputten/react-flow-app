@@ -2,13 +2,14 @@
 
 import cssVariables from './variables.module.scss';
 
-const themeControlsRadius = parseInt(cssVariables.themeControlsRadiusPx);
-
-const transitionTime = parseInt(cssVariables.transitionTimeMs);
-const animationTime = parseInt(cssVariables.animationTimeMs);
-const disappearTime = parseInt(cssVariables.disappearTimeMs);
-
 const {
+  themeControlsRadiusPx,
+  defaultFontSizePx,
+
+  transitionTimeMs,
+  animationTimeMs,
+  disappearTimeMs,
+
   primaryColor,
   secondaryColor,
 
@@ -28,9 +29,22 @@ const {
   infoColor,
 } = cssVariables;
 
+const themeControlsRadius = parseInt(themeControlsRadiusPx);
+const defaultFontSize = parseInt(defaultFontSizePx);
+
+const defaultFontSizeRem = (defaultFontSize * 16) / 10;
+
+const transitionTime = parseInt(transitionTimeMs);
+const animationTime = parseInt(animationTimeMs);
+const disappearTime = parseInt(disappearTimeMs);
+
 export {
   // Dimensions...
+  themeControlsRadiusPx,
+  defaultFontSizePx,
   themeControlsRadius,
+  defaultFontSize,
+  defaultFontSizeRem,
 
   // Timeouts...
   transitionTime,

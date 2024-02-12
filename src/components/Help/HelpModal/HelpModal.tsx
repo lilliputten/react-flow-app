@@ -30,7 +30,9 @@ export const HelpModal: React.FC<TPropsWithClassName> = observer((props) => {
       PaperComponent={DialogPopupPaper}
     >
       <DialogTitle className={styles.title}>
-        <Box flexGrow={1}>{title}</Box>
+        <Box flexGrow={1} className={styles.titleText}>
+          {title}
+        </Box>
         <Box>
           <IconButton onClick={closeModal}>
             <Close />
