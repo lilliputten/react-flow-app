@@ -1,5 +1,6 @@
 .root {
   position: relative !important;
+  // min-height: 56px;
 }
 
 .navButtons {
@@ -15,13 +16,15 @@
   }
 }
 
-.drawerListItem {
-  :global(.MuiListItemIcon-root) {
-    opacity: 0.5;
-    min-width: 36px;
-  }
-}
-
 .appTitle {
   font-weight: normal;
+}
+
+.ListItemIcon {
+  color: $primaryColor;
+  min-width: 36px;
+}
+
+.drawerHeader:global(.MuiTypography-root) {
+  margin: 11px 0; // Adjust height to match app header height
 }

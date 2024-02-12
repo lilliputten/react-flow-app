@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite';
 import {
   AppBar,
   Box,
+  Breakpoint,
   Button,
   Divider,
   Drawer,
@@ -21,10 +22,12 @@ import {
   DriveFolderUpload,
   DarkMode,
   LightMode,
+  BugReport,
   SvgIconComponent,
 } from '@mui/icons-material';
 import classNames from 'classnames';
 
+import { isDev } from 'src/core/constants/config';
 import { TPropsWithClassName } from 'src/core/types';
 import { appTitle } from 'src/core/constants/config/app';
 import { useAppSessionStore } from 'src/store/AppSessionStore';
@@ -49,9 +52,12 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
     loadNewDataCb,
     themeMode,
     // appDataStore, // TODO?
+    showDemo,
+    useDemo,
   } = appSessionStore;
   const hasData = false; // appDataStore?.ready && loadNewDataCb;
   const isDark = themeMode === 'dark';
+  const allowDemo = isDev || useDemo;
   // TODO: Check current page
   const navItems = React.useMemo<TNavItem[]>(() => {
     // prettier-ignore
@@ -62,8 +68,10 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
       !isDark && { id: 'setDarkTheme', text: 'Light theme', icon: LightMode, title:'Set dark theme' },
       isDark && { id: 'setLightTheme', text: 'Dark theme', icon: DarkMode, title:'Set light theme' },
       { id: 'showHelp', text: 'Help', icon: HelpOutline, title:'Show application help' },
+      allowDemo && !showDemo && { id: 'showDemo', text: 'Demo', icon: BugReport, title: 'Show demo' },
+      allowDemo && showDemo && { id: 'closeDemo', text: 'Close demo', icon: BugReport, title: 'Hide demo' },
     ].filter(Boolean) as TNavItem[];
-  }, [hasData, isDark]);
+  }, [hasData, isDark, allowDemo, showDemo]);
 
   /** Mobile drawer state */
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -79,6 +87,14 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
       const { currentTarget } = ev;
       const { id } = currentTarget;
       switch (id) {
+        case 'closeDemo': {
+          appSessionStore.setShowDemo(false);
+          break;
+        }
+        case 'showDemo': {
+          appSessionStore.setShowDemo(true);
+          break;
+        }
         case 'setLightTheme': {
           appSessionStore.setThemeMode('light');
           break;
@@ -108,23 +124,22 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
     [appSessionStore, loadNewDataCb],
   );
 
+  const treshold: Breakpoint = 'md';
+  const midTreshold: Breakpoint = 'sm';
+
+  // TODO: Show other menu items for mobile mode...
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography className={styles.drawerHeader} variant="h6" sx={{ my: 2 }}>
         {appTitle}
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem
-            key={item.id}
-            disablePadding
-            className={styles.drawerListItem}
-            title={item.title ? item.title : undefined}
-          >
+          <ListItem key={item.id} disablePadding title={item.title ? item.title : undefined}>
             <ListItemButton id={item.id} onClick={handleNavItemClick}>
               {item.icon && (
-                <ListItemIcon>
+                <ListItemIcon className={styles.ListItemIcon}>
                   <item.icon />
                 </ListItemIcon>
               )}
@@ -136,28 +151,36 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
     </Box>
   );
 
+  const toolbarHeight = 56;
+
   return (
     <>
       <AppBar className={classNames(className, styles.root)} component="nav">
-        <Toolbar>
+        <Toolbar sx={{ minHeight: { xs: toolbarHeight, [treshold]: toolbarHeight } }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { [treshold]: 'none' } }}
           >
             <Menu />
           </IconButton>
-          <Typography
-            className={styles.appTitle}
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            {appTitle}
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'flex' } }} className={styles.navButtons}>
+          {!mobileOpen && (
+            <Typography
+              className={styles.appTitle}
+              variant="h6"
+              component="div"
+              sx={{
+                flexGrow: 1,
+                display: { xs: 'none', [midTreshold]: 'block', [treshold]: 'block' },
+              }}
+            >
+              {/* TODO: Show logo */}
+              {appTitle}
+            </Typography>
+          )}
+          <Box sx={{ display: { xs: 'none', [treshold]: 'flex' } }} className={styles.navButtons}>
             {navItems.map((item) => (
               <Button
                 key={item.id}
@@ -183,7 +206,7 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', [treshold]: 'none' },
             // TODO: Move to style's module
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}

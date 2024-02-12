@@ -11,6 +11,8 @@ import { AppSessionStore, useAppSessionStore } from 'src/store/AppSessionStore';
 // import { AppCore } from 'src/components/App/AppCore';
 import { AppRouterWrapperWaiter } from './AppRouterWrapperWaiter';
 import { HelpModal } from 'src/components/Help/HelpModal';
+import { Demo } from 'src/components/Demo';
+// import { DemoPage } from 'src/pages/DemoPage';
 
 import styles from './AppRouterWrapper.module.scss';
 
@@ -41,6 +43,8 @@ const RenderCurrentComponent: React.FC<TCurrentComponentProps> = (props) => {
   switch (rootState) {
     case 'waiting':
       return <AppRouterWrapperWaiter />;
+    case 'demo':
+      return <Demo />;
     case 'finished':
       return <AppRouterWrapperFinished />;
     case 'ready':

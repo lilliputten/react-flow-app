@@ -44,6 +44,7 @@ const queryParameters = [
   // prettier-ignore
   'showLeftPanel',
   'themeMode',
+  'useDemo',
 
   // // Basic app options...
   // 'verticalLayout',
@@ -66,16 +67,25 @@ const queryParameters = [
 ] as const;
 export type TQueryParameter = (typeof queryParameters)[number];
 
+/** Parameters not supposed to be saved -- not included into the `saveableParameters` list */
+const nonSaveableParameters = [
+  'useDemo',
+  'doAutoLoad',
+  'doAutoStart',
+  // 'autoLoad*', // Applyed via special check (see below)
+];
+
 /** Parameters to save to the local storage */
 const saveableParameters = queryParameters.filter(
   (id) =>
     // Exclude auto load urls...
-    !id.startsWith('autoLoadUrl') && id !== 'doAutoLoad' && id !== 'doAutoStart',
+    !id.startsWith('autoLoadUrl') && !nonSaveableParameters.includes(id), // id !== 'doAutoLoad' && id !== 'doAutoStart',
 );
 
 /** Updatable parameters descriptions */
 const updatableParameters: TUpdatableParameter<TQueryParameter>[] = [
   { id: 'showLeftPanel', type: 'boolean' },
+  { id: 'useDemo', type: 'boolean' },
   { id: 'themeMode', type: 'string', validValues: validMuiThemeModes },
   // // Basic app options...
   // { id: 'verticalLayout', type: 'boolean' },
@@ -102,9 +112,13 @@ export class AppSessionStore {
   // Session reaction disposers...
   staticDisposers?: IReactionDisposer[];
 
+  /* Allow to use demo */
+  @observable useDemo: boolean = false;
+
   @observable inited: boolean = false;
   @observable finished: boolean = false;
   @observable showHelp: boolean = false;
+  @observable showDemo: boolean = false;
   @observable ready: boolean = false;
   @observable loading: boolean = false;
   @observable status: TAppSessionStoreStatus;
@@ -174,9 +188,12 @@ export class AppSessionStore {
       loading,
       ready,
       finished,
+      showDemo,
     } = this;
     if (!inited || loading) {
       return 'waiting';
+    } else if (showDemo) {
+      return 'demo';
     } else if (finished) {
       return 'finished';
     } else if (ready) {
@@ -248,6 +265,10 @@ export class AppSessionStore {
 
   @action.bound setShowHelp(showHelp: typeof AppSessionStore.prototype.showHelp) {
     this.showHelp = showHelp;
+  }
+
+  @action.bound setShowDemo(showDemo: typeof AppSessionStore.prototype.showDemo) {
+    this.showDemo = showDemo;
   }
 
   @action setReady(ready: typeof AppSessionStore.prototype.ready) {
@@ -340,10 +361,14 @@ export class AppSessionStore {
 
   @action clearData() {
     // this.inited = false;
+    // this.finished = false;
     // this.ready = false;
     // this.loading = false;
     this.status = undefined;
     this.error = undefined;
+
+    this.showHelp = false;
+    this.showDemo = false;
 
     // Reset settings?
     this.clearSettings();

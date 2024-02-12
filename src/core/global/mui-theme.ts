@@ -4,6 +4,7 @@ import {
   ThemeOptions,
   PaletteOptions,
   PaletteColorOptions,
+  Theme,
 } from '@mui/material';
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 import tinycolor from 'tinycolor2';
@@ -134,12 +135,13 @@ function getMuiThemeOptions(params?: TMuiThemeParams) {
 
 export function createCustomizedMuiTheme(params?: TMuiThemeParams) {
   const options = getMuiThemeOptions(params);
-  const theme = createTheme(options);
+  const theme: Theme = createTheme(options);
   /* // DEBUG: Use this data to extend ThemeOptions data above
    * console.log('[mui-theme]: createCustomizedMuiTheme', params, theme, {
    *   // contrastThreshold: theme.palette.contrastThreshold, // 3
    *   // tonalOffset: theme.palette.tonalOffset, // 0.2
    *   // primary: theme.palette.primary,
+   *   breakpoints: theme.breakpoints,
    *   params,
    *   theme,
    * });
