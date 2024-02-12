@@ -7,6 +7,7 @@ import { Close } from '@mui/icons-material';
 import { TPropsWithClassName } from 'src/core/types';
 import { useAppSessionStore } from 'src/store/AppSessionStore';
 import { HelpContent } from 'src/components/Help/HelpContent';
+import { DialogPopupPaper } from 'src/components/MUI/DialogPopupPaper';
 
 import styles from './HelpModal.module.scss';
 
@@ -26,6 +27,7 @@ export const HelpModal: React.FC<TPropsWithClassName> = observer((props) => {
       open={showHelp}
       onClose={closeModal}
       maxWidth="md"
+      PaperComponent={DialogPopupPaper}
     >
       <DialogTitle className={styles.title}>
         <Box flexGrow={1}>{title}</Box>

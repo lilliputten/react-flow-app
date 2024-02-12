@@ -38,6 +38,7 @@ interface TNavItem {
   icon?: SvgIconComponent;
   id: string;
   text: string;
+  title?: string;
 }
 
 export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
@@ -53,13 +54,14 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
   const isDark = themeMode === 'dark';
   // TODO: Check current page
   const navItems = React.useMemo<TNavItem[]>(() => {
+    // prettier-ignore
     return [
       // { id: 'home', text: 'Home', icon: Home }, // UNUSED!
-      hasData && { id: 'loadData', text: 'Load new data', icon: DriveFolderUpload },
-      !hasData && { id: 'loadData', text: 'Load data', icon: DriveFolderUpload },
-      !isDark && { id: 'darkTheme', text: 'Dark mode', icon: DarkMode },
-      isDark && { id: 'lightTheme', text: 'Light mode', icon: LightMode },
-      { id: 'showHelp', text: 'Help', icon: HelpOutline },
+      hasData && { id: 'loadData', text: 'Load new data', icon: DriveFolderUpload, title:'Reload data' },
+      !hasData && { id: 'loadData', text: 'Load data', icon: DriveFolderUpload, title:'Load data' },
+      !isDark && { id: 'setDarkTheme', text: 'Light theme', icon: LightMode, title:'Set dark theme' },
+      isDark && { id: 'setLightTheme', text: 'Dark theme', icon: DarkMode, title:'Set light theme' },
+      { id: 'showHelp', text: 'Help', icon: HelpOutline, title:'Show application help' },
     ].filter(Boolean) as TNavItem[];
   }, [hasData, isDark]);
 
@@ -76,18 +78,12 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
     (ev) => {
       const { currentTarget } = ev;
       const { id } = currentTarget;
-      /* console.log('[AppHeader:handleNavItemClick]', {
-       *   id,
-       *   currentTarget,
-       *   ev,
-       * });
-       */
       switch (id) {
-        case 'lightTheme': {
+        case 'setLightTheme': {
           appSessionStore.setThemeMode('light');
           break;
         }
-        case 'darkTheme': {
+        case 'setDarkTheme': {
           appSessionStore.setThemeMode('dark');
           break;
         }
@@ -120,7 +116,12 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item.id} disablePadding className={styles.drawerListItem}>
+          <ListItem
+            key={item.id}
+            disablePadding
+            className={styles.drawerListItem}
+            title={item.title ? item.title : undefined}
+          >
             <ListItemButton id={item.id} onClick={handleNavItemClick}>
               {item.icon && (
                 <ListItemIcon>
@@ -149,6 +150,7 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
             <Menu />
           </IconButton>
           <Typography
+            className={styles.appTitle}
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
@@ -163,6 +165,7 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
                 sx={{ color: 'white' }}
                 onClick={handleNavItemClick}
                 startIcon={item.icon && <item.icon />}
+                title={item.title ? item.title : undefined}
               >
                 {item.text}
               </Button>
