@@ -17,7 +17,7 @@ export function AppSessionStoreProvider(props: TAppSessionStoreProviderProps): J
   React.useEffect(() => {
     // TODO: To set inited flag in other place?
     appSessionStore.setInited(true);
-    // TODO: Do some initializations?
+    // TODO: Do some other initializations?
     return () => {
       appSessionStore.destroy();
     };
@@ -30,14 +30,16 @@ export function AppSessionStoreProvider(props: TAppSessionStoreProviderProps): J
   );
 }
 
-export function withAppSessionStoreProvider<P extends JSX.IntrinsicAttributes>(
-  Component: React.ComponentType<P>,
-) {
-  return function AppSessionStoreWrapped(props: P) {
-    return (
-      <AppSessionStoreProvider>
-        <Component {...props} />
-      </AppSessionStoreProvider>
-    );
-  };
-}
+/* // UNUSED: Wrapper `withAppSessionStoreProvider`
+ * export function withAppSessionStoreProvider<P extends JSX.IntrinsicAttributes>(
+ *   Component: React.ComponentType<P>,
+ * ) {
+ *   return function AppSessionStoreWrapped(props: P) {
+ *     return (
+ *       <AppSessionStoreProvider>
+ *         <Component {...props} />
+ *       </AppSessionStoreProvider>
+ *     );
+ *   };
+ * }
+ */

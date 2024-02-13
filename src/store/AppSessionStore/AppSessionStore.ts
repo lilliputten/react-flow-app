@@ -13,14 +13,13 @@ import {
   TMuiThemeMode,
   validMuiThemeModes,
   defaultMuiThemeMode,
-  // TColor,
   TUpdatableParameter,
+  // TColor,
 } from 'src/core/types';
 import { autoLoadUrls } from 'src/core/constants/app';
 import { getSavedOrQueryParameter } from 'src/core/helpers/generic';
+import { AppDataStore } from 'src/store/AppDataStore';
 // import { defaultNodesColorMode, TNodesColorMode, validNodesColorModes } from 'src/core/types/App';
-// import { AppDataStore } from 'src/components/App/AppDataStore';
-// import { getSavedOrQueryParameter } from 'src/helpers/generic/getSavedOrQueryParameter';
 
 export type TAppSessionStoreStatus = undefined | 'dataLoaded' | 'finished';
 
@@ -130,8 +129,8 @@ export class AppSessionStore {
   /** Callback to go to load new data page */
   @observable loadNewDataCb?: () => void | undefined;
 
-  // // TODO: Linked app data store...
-  // @observable appDataStore?: AppDataStore;
+  // TODO: Linked app data store...
+  @observable appDataStore?: AppDataStore;
 
   // Settings...
 
@@ -250,6 +249,7 @@ export class AppSessionStore {
   initSettings(): Promise<void> {
     // TODO?
     return Promise.resolve();
+    // TODO: Update data store if provided?
   }
 
   // Core setters...
@@ -334,13 +334,16 @@ export class AppSessionStore {
    *     appDataStore.onNodesColorModeChanged(nodesColorMode);
    *   }
    * }
-   * @bound onAppDataStore(appDataStore?: AppDataStore) {
-   *   const { nodesColorMode } = this;
-   *   if (appDataStore) {
-   *     appDataStore.onNodesColorModeChanged(nodesColorMode);
-   *   }
-   * }
    */
+
+  /** Make some initalization/cleanup things for a data store */
+  @bound onAppDataStore(appDataStore?: AppDataStore) {
+    // const { nodesColorMode } = this;
+    if (appDataStore) {
+      // TODO: Invoke some syncs for data store...
+      // appDataStore.onNodesColorModeChanged(nodesColorMode);
+    }
+  }
 
   // Misc setters...
 
@@ -350,11 +353,10 @@ export class AppSessionStore {
 
   // Other setters...
 
-  /* // TODO: Linked data store...
-   * @action setAppDataStore(appDataStore?: AppDataStore) {
-   *   this.appDataStore = appDataStore;
-   * }
-   */
+  /** Set linked data store */
+  @action setAppDataStore(appDataStore?: AppDataStore) {
+    this.appDataStore = appDataStore;
+  }
 
   @action setLoadNewDataCb(loadNewDataCb: typeof AppSessionStore.prototype.loadNewDataCb) {
     this.loadNewDataCb = loadNewDataCb;
@@ -411,9 +413,8 @@ export class AppSessionStore {
        * reaction(() => this.autoHideNodesMaxOutputs, this.onAutoHideNodesParamsChanged),
        * reaction(() => this.nodesColorMode, this.onNodesColorModeChanged),
        */
-      /* // TODO: Linked app data store...
-       * reaction(() => this.appDataStore, this.onAppDataStore),
-       */
+      // TODO: Linked app data store...
+      reaction(() => this.appDataStore, this.onAppDataStore),
       // Add reactions to save all the saveable parameters to the local storage...
       ...saveableParameters.map((id) =>
         reaction(() => this[id], this.saveParameter.bind(this, id)),

@@ -1,82 +1,111 @@
 import React from 'react';
-import { Box, FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material';
+import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { SelectChangeEvent } from '@mui/material/Select';
+
+import { TDemoComponent } from 'src/core/types';
+import { DemoCheckDataStore } from './Tests/DemoCheckDataStore';
 
 import styles from './Demo.module.scss';
 
 interface TOption {
   value: string;
-  text: string;
+  content: string | React.ReactNode;
 }
-const demosList = [
-  // prettier-ignore
-  'Sample',
-  'Second',
-];
-const demos: TOption[] = demosList.map((id) => ({ value: id, text: id }));
+
+const demoComponents: Record<string, TDemoComponent> = {
+  DemoCheckDataStore: DemoCheckDataStore,
+};
+const demoTexts: Record<string, string> = {
+  // DemoCheckDataStore: 'Check data store',
+};
+
+const demoOptions: TOption[] = Object.keys(demoComponents).map((id) => {
+  const Component = demoComponents[id];
+  const text = demoTexts[id] || Component?.__title;
+  return {
+    value: id,
+    content: text ? (
+      <>
+        {id} <span className="dull">&nbsp;– {text}</span>
+      </>
+    ) : (
+      id
+    ),
+  };
+});
 
 // The local storage is used to save last demo (to make it 'sticky')
 const hasLocalStorage = typeof localStorage !== 'undefined';
 const storagePrefix = 'Demo:';
-const storageId = storagePrefix + 'option';
+const storageId = storagePrefix + 'id';
 
 export function Demo() {
-  const [demoOption, setDemoOption] = React.useState(
+  const [demoId, setDemoId] = React.useState(
     // NOTE: Use saved option if any...
     (hasLocalStorage && localStorage.getItem(storageId)) || '',
   );
+  const DemoComponent = React.useMemo(() => {
+    return demoComponents[demoId];
+  }, [demoId]);
+  /* // UNUSED: demoComponentText -- To display extra info about the demo component
+   * const demoComponentText = React.useMemo(() => {
+   *   return demoTexts[demoId] || DemoComponent?.__title;
+   * }, [DemoComponent, demoId]);
+   */
   // TODO: Remember last demo
   const handleChange = (event: SelectChangeEvent) => {
     const val = event.target.value;
-    setDemoOption(val);
+    setDemoId(val);
     // Save option to the future use...
     if (hasLocalStorage) {
       localStorage.setItem(storageId, val);
     }
   };
-  // DEMO: Test scrolling functionality...
-  const test = Array.from(Array(25));
-  const testContent = test.map((_, n) => {
-    return <p key={n}>{n}</p>;
-  });
+  /* // DEMO: Test scrolling functionality...
+   * const test = Array.from(Array(25));
+   * const testContent = test.map((_, n) => {
+   *   return <p key={n}>{n}</p>;
+   * });
+   */
   return (
     <Box className={styles.root}>
       <Box className={styles.selectorBox}>
         {/* TODO: Selector */}
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Demo option</InputLabel>
+          <InputLabel id="demo-simple-select-label">Demo component</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={demoOption}
-            label="Select demo"
+            value={demoId}
+            label="Demo component"
             onChange={handleChange}
             sx={{ minWidth: 300 }}
             fullWidth
           >
-            {demos.map(({ value, text }) => (
+            {demoOptions.map(({ value, content }) => (
               <MenuItem key={value} value={value}>
-                {text}
+                {content}
               </MenuItem>
             ))}
           </Select>
         </FormControl>
       </Box>
+      {/* // NOTE: It's a little redundant: the component name and description are already shown in the select box above
       <Box className={styles.demoHeader}>
-        <Typography>
-          {demoOption ? (
-            <span>
-              Displayed demo: <strong>{demoOption}</strong>
-            </span>
-          ) : (
-            <span className={styles.dull}>No demo selected</span>
-          )}
-        </Typography>
+        {demoId ? (
+          <span>
+            <span className="dull">Displayed demo:</span> <strong>{demoId}</strong>
+            {!!demoComponentText && <> – {demoComponentText}</>}
+          </span>
+        ) : (
+          <span className={styles.dull}>No demo selected</span>
+        )}
       </Box>
-      <Box className={styles.demoBox}>
+      */}
+      <Box className={styles.demoBox} id={demoId}>
         <Box className={styles.scrollable}>
           {/* TODO: Display here a demo component */}
-          {testContent}
+          {DemoComponent && <DemoComponent />}
         </Box>
       </Box>
     </Box>

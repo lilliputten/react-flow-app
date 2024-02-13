@@ -7,7 +7,7 @@ export function AppPage() {
     <AppWrapper>
       <FullScreenPageLayout>
         <AppRouterWrapper>
-          {/* Placeholder for the app page */}
+          {/* Placeholder for the main app page content */}
           ReactFlowAppRoot
         </AppRouterWrapper>
       </FullScreenPageLayout>

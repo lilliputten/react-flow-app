@@ -21,3 +21,7 @@
 body {
   @include singleFullSizeContainer;
 }
+
+.dull {
+  opacity: 0.5;
+}
