@@ -1,6 +1,6 @@
 /** @module gulp-helpers
  *  @since 2023.04.07, 00:00
- *  @changed 2024.02.11, 15:06
+ *  @changed 2024.02.14, 01:18
  */
 
 const fs = require('fs');
@@ -36,10 +36,10 @@ const envData = readProjectEnv();
 
 const timeZone = config.timeZone || '';
 
-// // UNUSED: These parameters are retrieving from `package.json` (prjConfig)
-// const timestampFileName = path.resolve(prjPath, 'build-timestamp.txt');
-// const timetagFileName = path.resolve(prjPath, 'build-timetag.txt');
-// const versionFileName = path.resolve(prjPath, 'build-version.txt');
+// // UNUSED: These parameters was retrieved from `package.json` (prjConfig) but sometimes this file is updated after the generation of those variables
+const timestampFileName = path.resolve(prjPath, 'build-timestamp.txt');
+const timetagFileName = path.resolve(prjPath, 'build-timetag.txt');
+const versionFileName = path.resolve(prjPath, 'build-version.txt');
 
 const prjConfig = require(path.resolve(prjPath, 'package.json'));
 
@@ -48,21 +48,21 @@ function getProjectName() {
 }
 
 function getTimestamp() {
-  return prjConfig.timestamp;
-  // const buf = fs.readFileSync(timestampFileName);
-  // return buf.toString().trim();
+  // return prjConfig.timestamp;
+  const buf = fs.readFileSync(timestampFileName);
+  return buf.toString().trim();
 }
 
 function getTimetag() {
-  return prjConfig.timetag;
-  // const buf = fs.readFileSync(timetagFileName);
-  // return buf.toString().trim();
+  // return prjConfig.timetag;
+  const buf = fs.readFileSync(timetagFileName);
+  return buf.toString().trim();
 }
 
 function getVersion() {
-  return prjConfig.version;
-  // const buf = fs.readFileSync(versionFileName);
-  // return buf.toString().trim();
+  // return prjConfig.version;
+  const buf = fs.readFileSync(versionFileName);
+  return buf.toString().trim();
 }
 
 function getCurrentTimeStr() {
