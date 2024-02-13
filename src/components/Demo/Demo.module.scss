@@ -10,7 +10,6 @@
 }
 
 .selectorBox {
-  /*!KEEP*/
   padding: 24px;
 }
 
@@ -19,11 +18,17 @@
   @include fullSizeBlock;
 }
 .scrollable {
-  @include scrollableContainer;
+  // Set full-size
+  flex: 1;
+  // Full-width
   width: 100%;
+  // Flex container (to contain inner boxes)
+  display: flex;
+  flex-direction: column;
+  // justify-content: center; // NOTE: Not compatible with overflow:auto
+  align-items: stretch;
+  // Enable scroll
+  overflow: auto;
+  // Paddings (if doesn't contain nested scrolls?)
   padding: 12px 24px;
-}
-
-.dull {
-  opacity: 0.5;
 }

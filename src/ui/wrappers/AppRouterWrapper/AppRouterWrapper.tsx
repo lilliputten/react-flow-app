@@ -12,6 +12,7 @@ import { useAppDataStore } from 'src/store/AppDataStore';
 
 import { HelpModal } from 'src/components/Help/HelpModal';
 import { Demo } from 'src/components/Demo';
+import { LoadDataPage } from 'src/components/LoadData/LoadDataPage';
 
 import { AppRouterWrapperWaiter } from './AppRouterWrapperWaiter';
 
@@ -33,21 +34,6 @@ type TAppRouterWrapperProps = TPropsWithChildrenAndClassName;
 interface TCurrentComponentProps extends TAppRouterWrapperProps {
   sessionRootState: typeof AppSessionStore.prototype.rootState;
 }
-
-/** Components router */
-const RenderCurrentComponent: React.FC<TCurrentComponentProps> = (props) => {
-  const { sessionRootState, children } = props;
-  switch (sessionRootState) {
-    case 'waiting':
-      return <AppRouterWrapperWaiter />;
-    case 'demo':
-      return <Demo />;
-    case 'finished':
-      return <AppRouterWrapperFinished />;
-    case 'ready':
-      return <>{children}</>;
-  }
-};
 
 function useAppSessionInit() {
   const appSessionStore = useAppSessionStore();
@@ -105,6 +91,23 @@ function useAppSessionInit() {
     };
   }, [appDataStore, appSessionStore, loadNewData]);
 }
+
+/** Components router */
+const RenderCurrentComponent: React.FC<TCurrentComponentProps> = (props) => {
+  const { sessionRootState, children } = props;
+  switch (sessionRootState) {
+    case 'waiting':
+      return <AppRouterWrapperWaiter />;
+    case 'demo':
+      return <Demo />;
+    case 'finished':
+      return <AppRouterWrapperFinished />;
+    case 'loadData':
+      return <LoadDataPage />;
+    case 'ready':
+      return <>{children}</>;
+  }
+};
 
 /** Choose & render suitable application part */
 const RenderContent: React.FC<TAppRouterWrapperProps> = observer((props) => {
