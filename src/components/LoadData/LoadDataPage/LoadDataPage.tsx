@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { Box, Stack, Button, Container } from '@mui/material';
-import { Check, DriveFolderUpload, Delete } from '@mui/icons-material';
+import { DriveFolderUpload, Delete, BarChart } from '@mui/icons-material';
 import classNames from 'classnames';
 
 import {
@@ -49,16 +49,14 @@ export const LoadDataPage: React.FC<TPropsWithClassName> = observer((props) => {
     // flowsData,
     // graphsData,
     // nodesData,
+    hasAllData,
+    hasSomeData,
   } = appDataStore;
   const [doAutoLoad, setAutoLoad] = React.useState(defaultAutoLoad);
-  // const [doAutoStart, setAutoStart] = React.useState(defaultAutoStart);
-  /** If data has already loaded then it's possible to go to core visualizer/editor */
-  const [isAllDataLoaded, setAllDataLoaded] = React.useState(false);
-  const [isSomeDataLoaded, setSomeDataLoaded] = React.useState(false);
   /** Start core application if all the data is ready... */
   const doVisualize = React.useCallback(() => {
     // TODO: Initialize stores...
-    // appSessionStore.updateHiddenGraphNodes();
+    // Eg: appSessionStore.updateHiddenGraphNodes();
     // All data is ready
     appDataStore.setReady(true);
   }, [appDataStore]);
@@ -78,21 +76,12 @@ export const LoadDataPage: React.FC<TPropsWithClassName> = observer((props) => {
     },
     [appDataStore],
   );
-  // Calculate overall loading status depending on all data loading status
-  React.useEffect(() => {
-    const isAllDataLoaded = !!(testData /* && edgesData && flowsData && graphsData && nodesData */);
-    const isSomeDataLoaded = !!(
-      testData /* || edgesData || flowsData || graphsData || nodesData */
-    );
-    setAllDataLoaded(isAllDataLoaded);
-    setSomeDataLoaded(isSomeDataLoaded);
-  }, [testData /*, edgesData, flowsData, graphsData, nodesData */]);
   // Auto start visualization...
   React.useEffect(() => {
-    if (isAllDataLoaded && doAutoStart) {
+    if (hasAllData && doAutoStart) {
       doVisualize();
     }
-  }, [isAllDataLoaded, doAutoStart, doVisualize]);
+  }, [hasAllData, doAutoStart, doVisualize]);
   return (
     <Container className={classNames(className, styles.root)} maxWidth="md">
       <Box className={classNames(styles.section, styles.content)}>
@@ -114,8 +103,8 @@ export const LoadDataPage: React.FC<TPropsWithClassName> = observer((props) => {
           // prettier-ignore
           variant="contained"
           onClick={doVisualize}
-          startIcon={<Check />}
-          disabled={!isAllDataLoaded}
+          startIcon={<BarChart />}
+          disabled={!hasAllData}
         >
           Visualize
         </Button>
@@ -125,7 +114,7 @@ export const LoadDataPage: React.FC<TPropsWithClassName> = observer((props) => {
           onClick={() => setAutoLoad(true)}
           color="secondary"
           startIcon={<DriveFolderUpload />}
-          disabled={isAllDataLoaded}
+          disabled={hasAllData}
         >
           Load default datasets
         </Button>
@@ -135,7 +124,7 @@ export const LoadDataPage: React.FC<TPropsWithClassName> = observer((props) => {
           onClick={doResetData}
           color="error"
           startIcon={<Delete />}
-          disabled={!isSomeDataLoaded}
+          disabled={!hasSomeData}
         >
           Reset loaded data
         </Button>

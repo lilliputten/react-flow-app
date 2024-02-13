@@ -1,6 +1,7 @@
 import { AppWrapper } from 'src/ui/wrappers/AppWrapper';
 import { FullScreenPageLayout } from 'src/ui/layouts/FullScreenPageLayout';
 import { AppRouterWrapper } from 'src/ui/wrappers/AppRouterWrapper';
+import { ShowData } from 'src/components/Data/ShowData';
 
 export function AppPage() {
   return (
@@ -8,7 +9,7 @@ export function AppPage() {
       <FullScreenPageLayout>
         <AppRouterWrapper>
           {/* Placeholder for the main app page content */}
-          ReactFlowAppRoot
+          <ShowData />
         </AppRouterWrapper>
       </FullScreenPageLayout>
     </AppWrapper>

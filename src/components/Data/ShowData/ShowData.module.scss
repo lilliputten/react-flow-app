@@ -5,15 +5,11 @@
 }
 
 .selectorBox,
-.demoBox {
+.mainContentBox {
   width: 100%;
 }
 
-.selectorBox {
-  padding: 24px;
-}
-
-.demoBox {
+.mainContentBox {
   flex: 1;
   @include fullSizeBlock;
 }

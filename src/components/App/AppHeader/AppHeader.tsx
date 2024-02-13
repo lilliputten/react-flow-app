@@ -23,6 +23,7 @@ import {
   DarkMode,
   LightMode,
   BugReport,
+  BarChart,
   SvgIconComponent,
 } from '@mui/icons-material';
 import classNames from 'classnames';
@@ -31,6 +32,7 @@ import { isDev } from 'src/core/constants/config';
 import { TPropsWithClassName } from 'src/core/types';
 import { appTitle } from 'src/core/constants/config/app';
 import { useAppSessionStore } from 'src/store/AppSessionStore';
+import { useAppDataStore } from 'src/store/AppDataStore';
 
 import styles from './AppHeader.module.scss';
 
@@ -42,19 +44,27 @@ interface TNavItem {
   id: string;
   text: string;
   title?: string;
+  disabled?: boolean;
 }
 
 export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
   const { className } = props;
   const container = document.body;
+  const appDataStore = useAppDataStore();
   const appSessionStore = useAppSessionStore();
   const {
+    // prettier-ignore
     loadNewDataCb,
     themeMode,
-    // appDataStore, // TODO?
     showDemo,
+    showHelp,
     useDemo,
+    rootState,
   } = appSessionStore;
+  const {
+    // prettier-ignore
+    hasAllData,
+  } = appDataStore;
   const hasData = false; // appDataStore?.ready && loadNewDataCb;
   const isDark = themeMode === 'dark';
   const allowDemo = isDev || useDemo;
@@ -63,16 +73,17 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
     // prettier-ignore
     return [
       // { id: 'home', text: 'Home', icon: Home }, // UNUSED!
-      hasData && { id: 'loadData', text: 'Load new data', icon: DriveFolderUpload, title:'Reload data' },
-      !hasData && { id: 'loadData', text: 'Load data', icon: DriveFolderUpload, title:'Load data' },
+      hasAllData && { id: 'visualize', text: 'Visualize', icon: BarChart, title:'Show data', disabled: rootState === 'ready' },
+      hasData && { id: 'loadData', text: 'Load new data', icon: DriveFolderUpload, title:'Reload data', disabled: rootState === 'loadData' },
+      !hasData && { id: 'loadData', text: 'Load data', icon: DriveFolderUpload, title:'Load data', disabled: rootState === 'loadData' },
       !isDark && { id: 'setDarkTheme', text: 'Light theme', icon: LightMode, title:'Set dark theme' },
       isDark && { id: 'setLightTheme', text: 'Dark theme', icon: DarkMode, title:'Set light theme' },
-      { id: 'showHelp', text: 'Help', icon: HelpOutline, title:'Show application help' },
-      allowDemo && !showDemo && { id: 'showDemo', text: 'Demo', icon: BugReport, title: 'Show demo' },
-      allowDemo && showDemo && { id: 'closeDemo', text: 'Close demo', icon: BugReport, title: 'Hide demo' },
+      { id: 'showHelp', text: 'Help', icon: HelpOutline, title:'Show application help', disabled: showHelp },
+      allowDemo && { id: 'showDemo', text: 'Demo', icon: BugReport, title: 'Show demo', disabled: showDemo },
+      // allowDemo && !showDemo && { id: 'showDemo', text: 'Demo', icon: BugReport, title: 'Show demo' },
+      // allowDemo && showDemo && { id: 'closeDemo', text: 'Close demo', icon: BugReport, title: 'Hide demo' },
     ].filter(Boolean) as TNavItem[];
-  }, [hasData, isDark, allowDemo, showDemo]);
-
+  }, [hasData, isDark, allowDemo, showDemo, rootState, showHelp, hasAllData]);
   /** Mobile drawer state */
   const [mobileOpen, setMobileOpen] = React.useState(false);
   /** Toggle mobile drawer... */
@@ -87,13 +98,19 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
       const { currentTarget } = ev;
       const { id } = currentTarget;
       switch (id) {
+        case 'visualize': {
+          appSessionStore.setShowDemo(false);
+          appSessionStore.setShowHelp(false);
+          appDataStore.setReady(true);
+          break;
+        }
         case 'loadData': {
           appSessionStore.setShowDemo(false);
           appSessionStore.setShowHelp(false);
+          appSessionStore.setReady(true);
           if (loadNewDataCb) {
             loadNewDataCb();
           }
-          appSessionStore.setReady(true);
           break;
         }
         case 'setLightTheme': {
@@ -122,13 +139,15 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
         }
       }
     },
-    [appSessionStore, loadNewDataCb],
+    [appSessionStore, appDataStore, loadNewDataCb],
   );
 
+  // Adaptive breakpoints...
   const treshold: Breakpoint = 'md';
   const midTreshold: Breakpoint = 'sm';
 
-  const toolbarHeight = 56;
+  // Toolbar height...
+  const toolbarHeight = 48;
 
   // TODO: Show other menu items for mobile mode...
   const drawer = (
@@ -140,7 +159,7 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.id} disablePadding title={item.title ? item.title : undefined}>
-            <ListItemButton id={item.id} onClick={handleNavItemClick}>
+            <ListItemButton id={item.id} onClick={handleNavItemClick} disabled={item.disabled}>
               {item.icon && (
                 <ListItemIcon className={styles.ListItemIcon}>
                   <item.icon />
@@ -192,6 +211,7 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
                 onClick={handleNavItemClick}
                 startIcon={item.icon && <item.icon />}
                 title={item.title ? item.title : undefined}
+                disabled={item.disabled}
               >
                 {item.text}
               </Button>

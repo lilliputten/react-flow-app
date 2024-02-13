@@ -62,8 +62,7 @@ export function Demo() {
     }
   };
   /* // DEMO: Test scrolling functionality...
-   * const test = Array.from(Array(25));
-   * const testContent = test.map((_, n) => {
+   * const testContent = Array.from(Array(25)).map((_, n) => {
    *   return <p key={n}>{n}</p>;
    * });
    */
@@ -90,7 +89,7 @@ export function Demo() {
           </Select>
         </FormControl>
       </Box>
-      {/* // NOTE: It's a little redundant: the component name and description are already shown in the select box above
+      {/* // NOTE: It's a little redundant to show the demo fetails here: the component name and description are already shown in the select box above
       <Box className={styles.demoHeader}>
         {demoId ? (
           <span>

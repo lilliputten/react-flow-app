@@ -1,4 +1,4 @@
-import { makeObservable, observable, action, when, IReactionDisposer } from 'mobx';
+import { makeObservable, observable, action, when, IReactionDisposer, computed } from 'mobx';
 import bound from 'bind-decorator';
 
 import {
@@ -73,6 +73,23 @@ export class AppDataStore {
     this.clearData();
     // TODO: Cleanup before exit?
     this.resetStaticReactions();
+  }
+
+  // Core getters...
+
+  @computed get hasAllData() {
+    return !!(
+      this.testData /* && this.edgesData && this.flowsData && this.graphsData && this.nodesData */
+    );
+  }
+  @computed get hasSomeData() {
+    return !!(
+      this.testData /* || this.edgesData || this.flowsData || this.graphsData || this.nodesData */
+    );
+  }
+
+  @computed get hasData() {
+    return this.hasAllData;
   }
 
   /* // UNUSED: External changes handlers...
