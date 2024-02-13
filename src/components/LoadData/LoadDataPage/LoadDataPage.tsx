@@ -17,17 +17,18 @@ import { useAppSessionStore } from 'src/store/AppSessionStore';
 import { getAppDataInfo, useAppDataStore } from 'src/store/AppDataStore';
 import { UploadAppDataField } from 'src/components/LoadData/UploadAppDataField';
 
-// import { InfoContent } from './InfoContent';
+import { LoadSplash } from 'src/components/LoadData/LoadSplash';
 
 import styles from './LoadDataPage.module.scss';
 
-// DEBUG: Unimplemented component stubs!
-const PlaceholderComponent = (id: string) => () => (
-  <Box className={classNames('AppRouterWrapperPlaceholder', id)}>
-    Placeholder component: <strong>{id}</strong>
-  </Box>
-);
-const InfoContent = PlaceholderComponent('InfoContent');
+/* // DEBUG: Unimplemented component stubs!
+ * const PlaceholderComponent = (id: string) => () => (
+ *   <Box className={classNames('AppRouterWrapperPlaceholder', id)}>
+ *     Placeholder component: <strong>{id}</strong>
+ *   </Box>
+ * );
+ * const LoadSplash = PlaceholderComponent('LoadSplash');
+ */
 
 export const LoadDataPage: React.FC<TPropsWithClassName> = observer((props) => {
   const { className } = props;
@@ -95,9 +96,7 @@ export const LoadDataPage: React.FC<TPropsWithClassName> = observer((props) => {
   );
   return (
     <Container className={classNames(className, styles.root)} maxWidth="md">
-      <Box className={classNames(styles.section, styles.content)}>
-        <InfoContent />
-      </Box>
+      <LoadSplash className={classNames(styles.section, styles.splash)} />
       <Stack className={classNames(styles.section, styles.inputFields)} gap={1}>
         <UploadAppDataField
           id="testData"

@@ -1,0 +1,43 @@
+.root {
+  // flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid $borderColor;
+  position: relative;
+}
+.splashBg {
+  opacity: 0.7;
+  background-image: url(./images/splash-1.jpg);
+  // background-image: url(/images/splash/splash-1.jpg);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.dark .splashBg {
+  background-image: url(./images/splash-1-dark.jpg);
+}
+.splashContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  top: 25%;
+}
+.splashMotto {
+  padding: 0 24px;
+  text-align: center;
+  font-size: 185%;
+  letter-spacing: 1px;
+  font-weight: 300;
+  opacity: 0.7;
+  // color: $primaryColor;
+  // mix-blend-mode: multiply; // Only for light mode!
+}

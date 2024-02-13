@@ -30,7 +30,7 @@ const FileInfoContent: React.FC<{ info: TDataFileUploadInfo }> = ({ info }) => {
   const dataInfo = getAppDataInfo(appDataStore[fileId]);
   return (
     <span className={styles.FileInfo} data-file-id={fileId}>
-      {title}: <strong>{fileName}</strong> (~{size}, {dataInfo})
+      {title}: <strong>{fileName}</strong> ({size}, {dataInfo})
     </span>
   );
 };
