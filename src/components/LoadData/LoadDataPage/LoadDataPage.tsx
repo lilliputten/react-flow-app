@@ -5,6 +5,7 @@ import { DriveFolderUpload, Delete, BarChart } from '@mui/icons-material';
 import classNames from 'classnames';
 
 import {
+  TDataFileUploadInfo,
   TPropsWithClassName,
   TTestData,
   // TEdgesData,
@@ -63,6 +64,7 @@ export const LoadDataPage: React.FC<TPropsWithClassName> = observer((props) => {
   const doResetData = React.useCallback(() => {
     // Clear all the data...
     setAutoLoad(false);
+    appDataStore.clearFileInfos();
     appDataStore.setTestData(undefined);
     // appDataStore.setEdgesData(undefined);
     // appDataStore.setFlowsData(undefined);
@@ -82,6 +84,15 @@ export const LoadDataPage: React.FC<TPropsWithClassName> = observer((props) => {
       doVisualize();
     }
   }, [hasAllData, doAutoStart, doVisualize]);
+  const setFileInfo = React.useCallback(
+    (info?: TDataFileUploadInfo) => {
+      if (info) {
+        const { fileId } = info;
+        appDataStore.setFileInfo(fileId, info);
+      }
+    },
+    [appDataStore],
+  );
   return (
     <Container className={classNames(className, styles.root)} maxWidth="md">
       <Box className={classNames(styles.section, styles.content)}>
@@ -95,6 +106,7 @@ export const LoadDataPage: React.FC<TPropsWithClassName> = observer((props) => {
           defaultLoaded={!!testData}
           dataInfo={getAppDataInfo(testData)}
           autoLoadUrl={doAutoLoad ? autoLoadUrlTest : undefined}
+          setFileInfo={setFileInfo}
           className={styles.uploadButton}
         />
       </Stack>

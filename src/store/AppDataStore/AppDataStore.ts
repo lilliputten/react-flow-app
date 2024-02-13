@@ -2,6 +2,8 @@ import { makeObservable, observable, action, when, IReactionDisposer, computed }
 import bound from 'bind-decorator';
 
 import {
+  TAppDataKey,
+  TDataFileUploadInfo,
   // TNodeId,
   TTestData,
   // TEdgesData,
@@ -25,6 +27,9 @@ export class AppDataStore {
 
   // Session reaction disposers...
   staticDisposers?: IReactionDisposer[];
+
+  // Used file infos...
+  fileInfos: Partial<Record<TAppDataKey, TDataFileUploadInfo>> = {};
 
   // State...
   @observable inited: boolean = false;
@@ -266,12 +271,13 @@ export class AppDataStore {
     this.setError(undefined);
   }
 
+  // Data setters...
+
   @action setTestData(testData: typeof AppDataStore.prototype.testData) {
     this.testData = testData;
   }
 
   /* // UNUSED: Setters...
-   * // Data setters...
    * @action setEdgesData(edgesData: typeof AppDataStore.prototype.edgesData) {
    *   this.edgesData = edgesData;
    * }
@@ -292,6 +298,19 @@ export class AppDataStore {
    *   return !!(Array.isArray(this.hiddenGraphNodes) && this.hiddenGraphNodes.length);
    * }
    */
+
+  // File infos...
+
+  @action setFileInfo(id: TAppDataKey, info?: TDataFileUploadInfo) {
+    this.fileInfos = {
+      ...this.fileInfos,
+      [id]: info,
+    };
+  }
+
+  @action clearFileInfos() {
+    this.fileInfos = {};
+  }
 
   // Generic utilities...
 

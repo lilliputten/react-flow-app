@@ -2,13 +2,14 @@ import React from 'react';
 import { ButtonOwnProps } from '@mui/material';
 import classNames from 'classnames';
 
+import { TAppDataKey, TDataFileUploadInfo } from 'src/core/types';
 import { getApproxSize } from 'src/core/helpers/basic';
-import { TDataFileUploadInfo, DataFileUploadField } from 'src/ui/data';
+import { DataFileUploadField } from 'src/ui/data';
 
 import styles from './UploadAppDataField.module.scss';
 
 interface TUploadAppDataField<T = unknown> {
-  id: string;
+  id: TAppDataKey;
   className?: string;
   /** Text string to show in file upload button */
   dataName?: string;
@@ -100,7 +101,6 @@ export const UploadAppDataField = <T extends unknown>(props: TUploadAppDataField
   }, [dataName, isLoaded, fileInfo, dataInfo]);
   return (
     <DataFileUploadField
-      // prettier-ignore
       className={classNames(className, styles.root)}
       id={id}
       text={text}
