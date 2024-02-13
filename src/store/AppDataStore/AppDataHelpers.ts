@@ -1,10 +1,13 @@
 import { periodizeNumber } from 'src/core/helpers/basic';
 
-export function getSankeyDataInfo(list?: unknown[]) {
-  if (!Array.isArray(list)) {
+export function getAppDataInfo(data?: unknown) {
+  if (!data) {
     return 'no data';
   }
-  const size = list.length;
+  if (!Array.isArray(data)) {
+    return 'single object';
+  }
+  const size = data.length;
   if (!size) {
     return 'empty';
   } else {

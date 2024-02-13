@@ -1,0 +1,23 @@
+.root {
+  // Scrollable container
+  @include scrollableContainer;
+}
+.section {
+  margin: $containerPaddingPx 0;
+}
+.content,
+.actions,
+.inputFields {
+  /*!KEEP*/
+}
+
+.uploadButton {
+  label {
+    justify-content: flex-start;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}

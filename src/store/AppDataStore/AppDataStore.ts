@@ -249,6 +249,10 @@ export class AppDataStore {
     this.setError(undefined);
   }
 
+  @action setTestData(testData: typeof AppDataStore.prototype.testData) {
+    this.testData = testData;
+  }
+
   /* // UNUSED: Setters...
    * // Data setters...
    * @action setEdgesData(edgesData: typeof AppDataStore.prototype.edgesData) {

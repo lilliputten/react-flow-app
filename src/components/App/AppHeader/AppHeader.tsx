@@ -87,12 +87,13 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
       const { currentTarget } = ev;
       const { id } = currentTarget;
       switch (id) {
-        case 'closeDemo': {
+        case 'loadData': {
           appSessionStore.setShowDemo(false);
-          break;
-        }
-        case 'showDemo': {
-          appSessionStore.setShowDemo(true);
+          appSessionStore.setShowHelp(false);
+          if (loadNewDataCb) {
+            loadNewDataCb();
+          }
+          appSessionStore.setReady(true);
           break;
         }
         case 'setLightTheme': {
@@ -111,12 +112,12 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
           appSessionStore.setShowHelp(false);
           break;
         }
-        case 'loadData': {
-          appSessionStore.setShowHelp(false);
-          if (loadNewDataCb) {
-            loadNewDataCb();
-          }
-          appSessionStore.setReady(true);
+        case 'showDemo': {
+          appSessionStore.setShowDemo(true);
+          break;
+        }
+        case 'closeDemo': {
+          appSessionStore.setShowDemo(false);
           break;
         }
       }
@@ -166,20 +167,22 @@ export const AppHeader: React.FC<TPropsWithClassName> = observer((props) => {
           >
             <Menu />
           </IconButton>
-          {!mobileOpen && (
-            <Typography
-              className={styles.appTitle}
-              variant="h6"
-              component="div"
-              sx={{
-                flexGrow: 1,
-                display: { xs: 'none', [midTreshold]: 'block', [treshold]: 'block' },
-              }}
-            >
-              {/* TODO: Show logo */}
-              {appTitle}
-            </Typography>
-          )}
+          <Typography
+            className={styles.appTitle}
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              display: {
+                xs: 'none',
+                [midTreshold]: mobileOpen ? 'none' : 'block',
+                [treshold]: 'block',
+              },
+            }}
+          >
+            {/* TODO: Show logo */}
+            {appTitle}
+          </Typography>
           <Box sx={{ display: { xs: 'none', [treshold]: 'flex' } }} className={styles.navButtons}>
             {navItems.map((item) => (
               <Button

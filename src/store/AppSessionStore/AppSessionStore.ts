@@ -134,7 +134,7 @@ export class AppSessionStore {
 
   // Settings...
 
-  /** Show left panel */
+  /** TODO: Show left panel */
   @observable showLeftPanel: boolean = defaultShowLeftPanel;
 
   /** Application theme */
@@ -191,6 +191,7 @@ export class AppSessionStore {
       ready,
       finished,
       showDemo,
+      appDataStore,
     } = this;
     if (!inited || loading) {
       return 'waiting';
@@ -198,6 +199,8 @@ export class AppSessionStore {
       return 'demo';
     } else if (finished) {
       return 'finished';
+    } else if (appDataStore && !appDataStore.ready) {
+      return 'loadData';
     } else if (ready) {
       return 'ready';
     } else {
