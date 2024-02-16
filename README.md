@@ -23,7 +23,7 @@ Repository: https://github.com/lilliputten/react-flow-app
 
 Demo deploy server (with a recent build): http://react-flow-app.lilliputten.ru/
 
-Node-Based UIs in React – React Flow: braryhttps://reactflow.dev/
+Node-Based UIs in React – React Flow library: https://reactflow.dev/
 
 ## Project workflow
 
